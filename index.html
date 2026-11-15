@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Junior Astronaut</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>🚀 Junior Astronaut</h1>
+        <p>Explore Space, Learn and Become an Astronaut!</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#learn">Learn</a>
+        <a href="#missions">Missions</a>
+        <a href="#quiz">Quiz</a>
+        <a href="#training">Training</a>
+    </nav>
+
+    
+<section id="home" class="home-section">
+
+    <div class="space-animation">
+        <div class="floating-astronaut">👨‍🚀</div>
+        <div class="floating-planet">🪐</div>
+        <div class="moving-rocket">🚀</div>
+        <div class="floating-star">⭐</div>
+        <div class="floating-moon">🌙</div>
+    </div>
+
+    <h2>Welcome, Future Astronaut!</h2>
+
+    <p>Are you ready to explore the universe?</p>
+
+    <p>Discover planets, learn about space and complete exciting missions.</p>
+
+    <button onclick="startLearning()">
+        🚀 Start Exploring
+    </button>
+
+</section>
+
+
+   <section id="learn">
+    <h2>🌍 Explore Our Solar System</h2>
+
+    <p>Discover the eight planets in our Solar System!</p>
+
+    <div class="planet-container">
+
+        <div class="planet-card">
+            <h3>☀️ Sun</h3>
+            <p>The Sun is the star at the centre of our Solar System.</p>
+        </div>
+
+        <div class="planet-card">
+            <h3>☿ Mercury</h3>
+            <p>Mercury is the closest planet to the Sun.</p>
+        </div>
+
+        <div class="planet-card">
+            <h3>♀️ Venus</h3>
+            <p>Venus is the hottest planet.</p>
+        </div>
+
+        <div class="planet-card">
+            <h3>🌍 Earth</h3>
+            <p>Earth is our home planet.</p>
+        </div>
+
+        <div class="planet-card">
+            <h3>🔴 Mars</h3>
+            <p>Mars is known as the Red Planet.</p>
+        </div>
+
+        <div class="planet-card">
+            <h3>🪐 Jupiter</h3>
+            <p>Jupiter is the largest planet.</p>
+        </div>
+
+        <div class="planet-card">
+            <h3>🪐 Saturn</h3>
+            <p>Saturn is famous for its rings.</p>
+        </div>
+
+        <div class="planet-card">
+            <h3>🔵 Uranus</h3>
+            <p>Uranus rotates on its side.</p>
+        </div>
+
+        <div class="planet-card">
+            <h3>🔵 Neptune</h3>
+            <p>Neptune is the farthest planet from the Sun.</p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- PICTURE DETAILS POPUP -->
+<div id="picture-modal" class="picture-modal">
+    <div class="picture-modal-content">
+        <button class="close-modal"
+                onclick="closePicture()">
+            ✖
+        </button>
+
+        <img id="modal-image" src="" alt="Space photograph">
+
+        <h3 id="modal-title"></h3>
+
+        <p id="modal-description"></p>
+    </div>
+</div>
+
+
+<!-- SPACE PICTURE EXPLORER -->
+<section id="picture-explorer">
+    <h2>🌌 Space Picture Explorer</h2>
+
+    <p>Discover amazing real photographs from NASA!</p>
+
+    <div class="cartoon-welcome">
+        <div class="cartoon-astronaut">👨‍🚀</div>
+        <h3>Welcome, Space Explorer!</h3>
+        <p>Click a space picture to discover more.</p>
+    </div>
+
+    <div id="nasa-gallery" class="nasa-gallery">
+        <p>Loading space photographs... 🚀</p>
+    </div>
+
+    <p class="image-credit">
+        Space photographs: NASA Image and Video Library
+    </p>
+
+</section>
+
+<!-- PICTURE DETAILS POPUP -->
+<div id="picture-modal" class="picture-modal">
+    <div class="picture-modal-content">
+        <button class="close-modal"
+                onclick="closePicture()">
+            ✖
+        </button>
+
+        <img id="modal-image" src="" alt="Space photograph">
+
+        <h3 id="modal-title"></h3>
+
+        <p id="modal-description"></p>
+    </div>
+</div>
+<!-- ALIEN SPACE SNACK GAME -->
+
+<section id="alien-game">
+
+    <h2>👾 Alien's Lost Space Snacks!</h2>
+
+    <div class="alien-character">
+        <div class="alien-face">👾</div>
+        <h3>Hi,Junior Astronaut! I'm Zippy!</h3>
+        <p>
+            Oh no! My space snacks are lost!
+            Can you help me to find them?
+        </p>
+    </div>
+
+    <div class="game-score">
+        ⭐ Stars: <span id="alien-stars">0</span>
+        🍪 Snacks: <span id="alien-snacks">0</span>
+    </div>
+
+    <div id="alien-start">
+        <h3>🚀 Ready for a Space Adventure?</h3>
+        <p>Visit all 8 planets and help Zippy collect snacks!</p>
+        <button onclick="startAlienGame()">
+            Start Adventure 🚀
+        </button>
+    </div>
+
+    <div id="alien-play" style="display:none;">
+
+        <h3 id="alien-planet"></h3>
+
+        <div id="alien-question"></div>
+
+        <div id="alien-options"></div>
+
+        <div id="alien-feedback"></div>
+
+        <button id="alien-next"
+                onclick="nextAlienQuestion()"
+                style="display:none;">
+            Next Planet ➜
+        </button>
+
+    </div>
+
+    <div id="alien-finish" style="display:none;">
+        <h2>🏆 Space Adventure Completed!</h2>
+        <div style="font-size:65px;">👾🎉🚀</div>
+        <h3 id="alien-final-score"></h3>
+        <p id="alien-final-message"></p>
+        <button onclick="startAlienGame()">Play Again 🔄</button>
+    </div>
+    
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MOON BASE BOSS - Final Complete</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
+body{background:#050816;color:#fff;overflow-x:hidden}
+header{background:linear-gradient(90deg,#1e1b4b,#7c3aed,#db2777);padding:18px;text-align:center;position:sticky;top:0;z-index:100}
+header h1{font-size:26px} header p{opacity:.9;font-size:13px}
+nav{display:flex;gap:6px;justify-content:center;padding:12px;flex-wrap:wrap;background:#0a0f2e;position:sticky;top:72px;z-index:99}
+nav button{border:0;padding:9px 10px;border-radius:999px;background:#1e293b;color:#fff;font-weight:700;cursor:pointer;font-size:11px}
+nav button.active,nav button:hover{background:#facc15;color:#000}
+nav button.locked{opacity:.45}
+.section{max-width:1100px;margin:0 auto;padding:18px;display:none;padding-bottom:180px}
+.section.active{display:block}
+.card{background:#11183a;border:1px solid #2e3a6e;border-radius:18px;padding:16px;margin-bottom:16px}
+.card h2{color:#facc15;margin-bottom:8px}
+p{line-height:1.6;font-size:15px;color:#e2e8f0}
+.badge{display:inline-block;background:#facc15;color:#000;padding:4px 10px;border-radius:999px;font-weight:800;font-size:12px;margin:4px 4px 0 0}
+.hint{background:#fef08a;color:#000;padding:10px;border-radius:12px;font-weight:700;text-align:center;margin:10px 0}
+.lockBox{background:#1e293b;border:2px dashed #facc15;border-radius:16px;padding:22px;text-align:center;margin:12px 0}
+#solarWrap{position:relative;height:520px;border-radius:18px;overflow:hidden;background:#000;border:2px solid #334155}
+#solarCanvas{width:100%;height:100%;display:block;cursor:grab}
+#planetInfo{position:absolute;left:12px;bottom:12px;right:12px;background:rgba(0,0,0,.85);border:1px solid #facc15;border-radius:14px;padding:12px;display:none}
+#planetInfo h3{color:#facc15}
+#planetInfo img{width:100%;height:130px;object-fit:cover;border-radius:10px;margin:8px 0}
+.controls{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.controls button{background:#fff;color:#000;border:0;padding:9px 14px;border-radius:999px;font-weight:800;cursor:pointer}
+.controls button.active{background:#facc15}
+.planetBtns{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.planetBtns button{background:#1e293b;color:#fff;border:1px solid #475569;padding:8px 12px;border-radius:999px;cursor:pointer;font-weight:700}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:700px){.grid{grid-template-columns:1fr}#solarWrap{height:420px}header h1{font-size:22px}}
+img.res{width:100%;height:180px;object-fit:cover;border-radius:12px}
+img.realMoon{width:100%;max-width:520px;border-radius:50%;border:4px solid #facc15;box-shadow:0 0 40px rgba(250,204,21,.5)}
+.code{background:#000;color:#4ade80;padding:12px;border-radius:12px;font-family:monospace;font-size:13px;overflow:auto}
+.stat{display:flex;justify-content:space-between;background:#0f172a;padding:12px;border-radius:12px;margin:6px 0}
+.stat b{font-size:20px}
+.gameBtn{width:100%;padding:14px;border:0;border-radius:12px;background:#22c55e;color:#000;font-weight:900;font-size:17px;cursor:pointer;margin-top:8px}
+.choice{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.choice button{padding:12px;border-radius:12px;border:2px solid #334155;background:#1e293b;color:#fff;font-weight:700;cursor:pointer}
+.quizQ{font-size:20px;font-weight:800;margin:14px 0}
+.quizOpt{display:block;width:100%;text-align:left;padding:14px;margin:8px 0;border:2px solid #334155;background:#1e293b;color:#fff;border-radius:14px;font-size:16px;font-weight:700;cursor:pointer}
+.quizOpt.correct{background:#22c55e !important;color:#000}
+.quizOpt.wrong{background:#ef4444 !important;color:#fff}
+.quizBar{height:14px;background:#1e293b;border-radius:999px;overflow:hidden;margin:10px 0}
+.quizBarFill{height:100%;background:linear-gradient(90deg,#facc15,#ec4899);width:0%;transition:.5s}
+.quizScore{font-size:28px;text-align:center;font-weight:900;color:#facc15}
+.stars{font-size:42px;text-align:center}
+.puzzleGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:500px;margin:14px auto}
+.puzzleCard{aspect-ratio:1;background:linear-gradient(180deg,#7c3aed,#4c1d95);border:3px solid #facc15;border-radius:16px;font-size:38px;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.puzzleCard.flipped{background:#fff}
+.puzzleCard.matched{background:#22c55e;animation:pop .4s}
+.puzzleCard.wrongShake{animation:shake .4s}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+@keyframes pop{from{transform:scale(.7);opacity:0}to{transform:scale(1);opacity:1}}
+.puzzleLevel{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:10px 0}
+.puzzleLevel button{border:0;padding:10px 16px;border-radius:999px;font-weight:800;cursor:pointer;background:#1e293b;color:#fff}
+.puzzleLevel button.active{background:#facc15;color:#000}
+#catchArea{position:relative;height:380px;background:linear-gradient(180deg,#0f172a,#1e1b4b,#7c3aed);border-radius:18px;overflow:hidden;border:3px solid #facc15;cursor:pointer}
+.catchStar{position:absolute;font-size:42px;cursor:pointer;animation:fall linear forwards}
+@keyframes fall{from{top:-50px}to{top:380px}}
+@keyframes twinkle{0%,100%{transform:scale(1)}50%{transform:scale(1.3)}}
+.twinkle{animation:twinkle .6s infinite}
+#rocketArea{position:relative;height:430px;background:linear-gradient(180deg,#020617 0%,#0f172a 40%,#1e1b4b 70%,#312e81 100%);border-radius:18px;overflow:hidden;border:3px solid #facc15;text-align:center}
+#moonTarget{font-size:78px;position:absolute;top:8px;left:50%;transform:translateX(-50%);z-index:1}
+#launchPad{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:200px;height:34px;background:linear-gradient(180deg,#475569,#1e293b);border-radius:8px 8px 0 0;border-top:4px solid #facc15;z-index:1}
+#rocketModel{position:absolute;left:50%;transform:translateX(-50%);bottom:32px;width:90px;height:260px;transition:bottom 1.6s ease-in;z-index:2}
+#rocketModel svg{width:100%;height:100%;filter:drop-shadow(0 0 12px rgba(255,255,255,.4))}
+#rocketFire{position:absolute;left:50%;transform:translateX(-50%);bottom:2px;width:70px;height:0px;transition:height .3s;z-index:1}
+#rocketFire.show{height:70px;animation:flame .15s infinite alternate}
+@keyframes flame{from{transform:translateX(-50%) scaleX(1)}to{transform:translateX(-50%) scaleX(1.25)}}
+#rocketSmoke{position:absolute;left:50%;transform:translateX(-50%);bottom:10px;font-size:40px;opacity:0}
+#rocketSmoke.show{opacity:.9}
+.rocketPartBtns{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin:10px 0}
+.rocketPartBtns button{border:2px solid #334155;background:#1e293b;color:#fff;padding:8px 12px;border-radius:999px;font-weight:800;cursor:pointer;font-size:13px}
+.rocketPartBtns button.active{background:#facc15;color:#000;border-color:#facc15}
+#rocketPartInfo{background:#0f172a;border:2px solid #facc15;border-radius:12px;padding:12px;text-align:center;font-weight:700;min-height:58px}
+#powerBarWrap{height:24px;background:#1e293b;border-radius:999px;overflow:hidden;margin:12px 0;border:2px solid #facc15;position:relative}
+#powerBar{height:100%;width:0%;background:linear-gradient(90deg,#ef4444,#facc15,#22c55e)}
+#powerZone{position:absolute;top:0;bottom:0;background:rgba(34,197,94,.35);border-left:3px solid #22c55e;border-right:3px solid #22c55e;left:70%;width:20%}
+#zeroCanvas{width:100%;height:460px;background:radial-gradient(circle at 30% 20%,#1e1b4b,#050816 70%);border:3px solid #facc15;border-radius:18px;display:block;cursor:pointer;touch-action:none}
+.zeroBtns{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.zeroBtns button{flex:1;border:0;padding:13px;border-radius:14px;font-weight:900;cursor:pointer;font-size:15px}
+#squeezeBtn{background:#38bdf8;color:#000;font-size:19px}
+#gravityBtn{background:#facc15;color:#000}
+#feedBtn{background:#22c55e;color:#000;font-size:19px}
+.hungerBar{height:18px;background:#1e293b;border-radius:999px;overflow:hidden;border:2px solid #facc15;margin:8px 0}
+.hungerFill{height:100%;background:linear-gradient(90deg,#f97316,#facc15,#22c55e);width:20%;transition:.5s}
+#delayTrack{position:relative;height:180px;background:linear-gradient(90deg,#0f172a,#1e1b4b,#0f172a);border:3px solid #facc15;border-radius:18px;overflow:hidden;margin:12px 0}
+#earthStation{position:absolute;left:12px;top:50%;transform:translateY(-50%);text-align:center;font-size:44px}
+#moonStation{position:absolute;right:12px;top:50%;transform:translateY(-50%);text-align:center;font-size:44px}
+#signalDot{position:absolute;top:50%;left:60px;width:22px;height:22px;background:#facc15;border-radius:50%;box-shadow:0 0 18px #facc15;transform:translateY(-50%);display:none}
+#signalDot.returning{background:#38bdf8;box-shadow:0 0 18px #38bdf8}
+.delayBtns{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:10px 0}
+.delayBtns button{border:2px solid #334155;background:#1e293b;color:#fff;padding:10px 14px;border-radius:999px;font-weight:800;cursor:pointer}
+.delayBtns button.active{background:#facc15;color:#000}
+.chatBox{background:#0f172a;border:2px solid #334155;border-radius:14px;padding:12px;min-height:130px;max-height:240px;overflow-y:auto;margin:10px 0}
+.chatMsg{padding:8px 12px;border-radius:12px;margin:6px 0;max-width:85%;font-size:14px;font-weight:600}
+.chatMsg.you{background:#7c3aed;color:#fff;margin-left:auto;text-align:right}
+.chatMsg.them{background:#1e293b;color:#fff}
+.chatMsg.waiting{background:#fef08a;color:#000;text-align:center;max-width:100%;animation:pop .4s}
+.delayBar{height:18px;background:#1e293b;border-radius:999px;overflow:hidden;border:2px solid #facc15;margin:8px 0}
+.delayFill{height:100%;background:linear-gradient(90deg,#facc15,#38bdf8);width:0%;transition:width .1s linear}
+.certInput{width:100%;padding:15px;border-radius:12px;border:3px solid #facc15;background:#0f172a;color:#fff;font-size:18px;font-weight:800;text-align:center;margin:8px 0}
+.certSelect{width:100%;padding:12px;border-radius:12px;border:2px solid #334155;background:#0f172a;color:#fff;font-weight:700;margin:8px 0;font-size:15px}
+.certEmojiRow{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:10px 0}
+.certEmojiRow button{font-size:28px;padding:8px 12px;border-radius:14px;border:3px solid #334155;background:#1e293b;cursor:pointer}
+.certEmojiRow button.active{border-color:#facc15;background:#facc15;transform:scale(1.1)}
+#certPreview{background:linear-gradient(180deg,#fef9c3,#fff7ed,#fef3c7);color:#111827;border:8px double #f59e0b;border-radius:22px;padding:24px 18px;text-align:center;display:none}
+#certPreview h2{color:#7c3aed;font-size:20px;letter-spacing:2px;margin-top:18px}
+#certName{font-size:38px;color:#db2777;font-family:Georgia,serif;border-bottom:3px dashed #f59e0b;display:inline-block;padding:0 14px;margin:6px 0;min-width:200px}
+#certTitle{font-size:22px;font-weight:900;color:#1e1b4b;margin:6px 0}
+#certScore{font-size:15px;font-weight:800;color:#065f46;background:#dcfce7;padding:8px;border-radius:10px;display:inline-block}
+#certDate{font-size:13px;color:#475569;margin-top:10px}
+#certSign{display:flex;justify-content:space-between;margin-top:18px;font-size:12px;color:#475569;gap:8px}
+#certSign b{font-size:15px;color:#111827;display:block}
+#certBadge{font-size:58px;margin:6px 0}
+footer{text-align:center;padding:18px;opacity:.7;font-size:13px}
+.dollsRow{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.dollCard{background:linear-gradient(180deg,#2e1a5e,#1e1b4b);border:2px solid #facc15;border-radius:20px;padding:14px 10px;width:155px;text-align:center;cursor:pointer;position:relative;overflow:hidden}
+.dollEmoji{font-size:68px;display:block;line-height:1}
+.dollCard h3{color:#fff;margin:6px 0 2px;font-size:16px}
+.dollCard p{font-size:12px;color:#fde68a;min-height:36px}
+.dollCard button{border:0;background:#facc15;color:#000;padding:7px 12px;border-radius:999px;font-weight:800;cursor:pointer;margin-top:6px;font-size:12px}
+.speech{position:absolute;top:6px;left:6px;right:6px;background:#fff;color:#111827;font-size:11px;font-weight:700;padding:6px;border-radius:10px;display:none}
+.speech.show{display:block;animation:pop .3s}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+@keyframes wave{0%,100%{transform:rotate(0)}25%{transform:rotate(15deg)}75%{transform:rotate(-15deg)}}
+@keyframes dance{0%,100%{transform:rotate(-8deg)}25%{transform:rotate(8deg) translateY(-8px)}50%{transform:rotate(-8deg)}75%{transform:rotate(8deg) translateY(-8px)}}
+@keyframes spinJump{0%{transform:rotate(0)}50%{transform:rotate(180deg) translateY(-12px)}100%{transform:rotate(360deg)}}
+@keyframes blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+.anim-luna{animation:bounce 1.8s infinite}.anim-stella{animation:floaty 2.2s infinite}.anim-robo{animation:dance 1.2s infinite}.anim-wave{animation:wave 1s infinite}.anim-blink{animation:blink 3s infinite}
+.dancing .dollEmoji{animation:dance .6s infinite !important}.celebrate .dollEmoji{animation:spinJump 1s infinite !important}.sad .dollEmoji{filter:grayscale(1)}
+.danceBtn{background:#ec4899 !important;color:#fff !important;width:100%;padding:11px !important;font-size:14px !important;margin-top:10px !important}
+#astroWrap{position:fixed;right:12px;bottom:12px;z-index:1000;display:flex;flex-direction:column;align-items:flex-end;gap:8px;width:310px;max-width:92vw}
+#astroBubble{background:#fff;color:#111827;border-radius:18px 18px 4px 18px;padding:12px 14px;font-size:14px;font-weight:600;box-shadow:0 10px 30px rgba(0,0,0,.45);min-height:64px}
+#astroName{font-size:12px;color:#7c3aed}
+#astroBtns{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+#astroBtns button{border:0;padding:9px 13px;border-radius:999px;font-weight:800;cursor:pointer;font-size:13px}
+#btnNext{background:#facc15}#btnSpeak{background:#fff}#btnHello{background:#22c55e;color:#fff}
+#astroChar{width:115px;height:115px;border-radius:50%;background:linear-gradient(180deg,#fff,#c7d2fe);display:flex;align-items:center;justify-content:center;font-size:64px;cursor:pointer;border:4px solid #facc15;animation:floaty 2.5s infinite}
+@media print{body *{visibility:hidden}#certPreview,#certPreview *{visibility:visible}#certPreview{position:absolute;left:0;top:0;width:100%;display:block !important}}
+</style>
+</head>
+<body>
+<header><h1>🌕 MOON BASE BOSS 🚀</h1><p>Original Rocket • Real Moon • Zero Gravity • Communication Delay • 7 Games • Certificate</p></header>
+<nav>
+<button class="active" onclick="showTab('solar',this)">🌌 Solar</button>
+<button onclick="showTab('dolls',this)">💃 Dolls</button>
+<button onclick="showTab('game',this)">🎮 Moon Game</button>
+<button onclick="showTab('quiz',this)">🧠 Quiz</button>
+<button onclick="showTab('puzzle',this)">🧩 Puzzle</button>
+<button onclick="showTab('catch',this)">⭐ Catch</button>
+<button onclick="showTab('rocket',this)">🚀 Rocket</button>
+<button onclick="showTab('zero',this)">💧 Zero-G!</button>
+<button onclick="showTab('delay',this)">📡 Delay!</button>
+<button id="certNavBtn" class="locked" onclick="tryOpenCert(this)">🔒 Cert</button>
+<button onclick="showTab('nasa',this)">🛰️ NASA</button>
+</nav>
+
+<div id="solar" class="section active"><div class="card"><h2>🌌 3D Solar System - Click A Planet!</h2><p><span class="badge">FOR KIDS</span> <span class="badge">DRAG TO ROTATE</span> <span class="badge">CLICK A PLANET</span></p><div class="hint">👆 Drag to spin • Scroll to zoom • Click any planet!</div><div class="dollsRow"><div class="dollCard" id="cardLuna" onclick="dollTalk('luna')"><div class="speech" id="speech-luna"></div><span class="dollEmoji anim-luna anim-blink">👩‍🚀</span><h3>Luna 💖</h3><p>Girl Astronaut<br>Dances & Waves!</p><button>👋 Say Hi!</button></div><div class="dollCard" id="cardStella" onclick="dollTalk('stella')"><div class="speech" id="speech-stella"></div><span class="dollEmoji anim-stella">👽</span><h3>Stella 💜</h3><p>Cute Alien<br>Floats in Space!</p><button>👋 Say Hi!</button></div><div class="dollCard" id="cardRobo" onclick="dollTalk('robo')"><div class="speech" id="speech-robo"></div><span class="dollEmoji anim-robo">🤖</span><h3>Robo 💙</h3><p>Baby Robot<br>Dances Funny!</p><button>👋 Say Hi!</button></div></div><button class="gameBtn danceBtn" onclick="allDance()">💃🎉 LET'S ALL DANCE! 🎉🕺</button><div class="controls" style="margin-top:12px"><button class="active" onclick="setSpeed(1,this)">▶ Normal</button><button onclick="setSpeed(3,this)">⏩ Fast</button><button onclick="setSpeed(0,this)">⏸ Pause</button><button onclick="resetCam()">🔄 Reset View</button></div><div id="solarWrap"><canvas id="solarCanvas"></canvas><div id="planetInfo"><h3 id="pName">Earth</h3><p id="pDesc"></p><img id="pImg" src=""></div></div><div class="planetBtns" id="planetBtns"></div><div class="grid" style="margin-top:14px"><div class="card" style="margin:0"><h3>☀️ Why Sun is Boss?</h3><p>Sun gives light + heat. Without Sun, Earth would be -270°C frozen!</p></div><div class="card" style="margin:0"><h3>🌍 Why Earth is Special?</h3><p>Earth is ONLY planet with water, oxygen and green trees! HLS sees Earth GREEN. Moon has 0 green.</p></div></div></div><div class="card" style="text-align:center"><h2>🌕 REAL MOON - Like NASA Sees It!</h2><p><span class="badge">REAL PHOTO STYLE</span> <span class="badge">GREY MOON</span> <span class="badge">CRATERS</span></p><img class="realMoon" src="https://images.unsplash.com/photo-1532693322450-2cb5c511067d?w=1000&q=80"><p style="margin-top:12px"><b>Real Moon is GREY, not yellow!</b><br>Dark spots = Old lava seas • Small holes = Craters from meteors<br>No air, No water, No green trees • 384,400 km from Earth!</p><button class="gameBtn" style="background:#facc15" onclick="speak('Real Moon is grey! It has craters from meteors! No air, no water!')">🔊 Hear About Real Moon</button></div><div class="card"><h2>🖼️ Beautiful Space Images</h2><div class="grid"><div><img class="res" src="https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&q=80"><p><b>Earth from Space</b></p></div><div><img class="res" src="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?w=800&q=80"><p><b>Moon Surface</b></p></div><div><img class="res" src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&q=80"><p><b>Galaxy</b></p></div><div><img class="res" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80"><p><b>Earth at Night</b></p></div></div></div></div>
+
+<div id="dolls" class="section"><div class="card"><h2>💃 Meet Your Space Friends!</h2><p>They talk, dance, wave and teach you!</p><div class="dollsRow" style="gap:16px"><div class="dollCard" style="width:200px" onclick="dollTalk('luna')"><div class="speech" id="speech2-luna"></div><span class="dollEmoji anim-luna" style="font-size:90px">👩‍🚀</span><h3>Luna - Brave Astronaut</h3><p>I love the Moon! I will teach you how to build a Moon Base!</p><button onclick="event.stopPropagation();dollTalk('luna')">🗣️ Talk To Luna</button></div><div class="dollCard" style="width:200px" onclick="dollTalk('stella')"><div class="speech" id="speech2-stella"></div><span class="dollEmoji anim-stella" style="font-size:90px">👽</span><h3>Stella - Alien Friend</h3><p>I come from Mars! I love stars!</p><button onclick="event.stopPropagation();dollTalk('stella')">🗣️ Talk To Stella</button></div><div class="dollCard" style="width:200px" onclick="dollTalk('robo')"><div class="speech" id="speech2-robo"></div><span class="dollEmoji anim-robo" style="font-size:90px">🤖</span><h3>Robo - Funny Robot</h3><p>Beep Boop! I love numbers!</p><button onclick="event.stopPropagation();dollTalk('robo')">🗣️ Talk To Robo</button></div></div><button class="gameBtn danceBtn" onclick="allDance()">🎉 DANCE PARTY! 🎉</button></div></div>
+
+<div id="game" class="section"><div class="card"><h2>🎮 GAME 1: MOON BASE BOSS - Survive 30 Days!</h2><p>Keep <b>Power 🔋, Oxygen 🫁, Food 🍎, Shielding 🛡️</b> above 0!</p><div class="stat"><span>🔋 Power</span><b id="power">70%</b></div><div class="stat"><span>🫁 Oxygen</span><b id="oxygen">70%</b></div><div class="stat"><span>🍎 Food</span><b id="food">70%</b></div><div class="stat"><span>🛡️ Shielding</span><b id="shield">70%</b></div><div class="stat"><span>📅 Day</span><b id="day">1 / 30</b></div><div class="stat"><span>🏆 Score</span><b id="score">0</b></div><h3 id="msg">Day 1: Solar storm coming! What do you do?</h3><div class="choice" id="choices"></div><button class="gameBtn" onclick="startGame()">🔄 RESTART GAME</button></div></div>
+
+<div id="quiz" class="section"><div class="card"><h2>🧠 GAME 2: SPACE QUIZ - Win = Certificate!</h2><p><span class="badge">10 QUESTIONS</span> <span class="badge">NEED 8/10 TO WIN</span> <span class="badge">WIN = CERTIFICATE</span></p><div class="hint">🏆 Get 8 / 10 or more to WIN and UNLOCK Certificate!</div><div id="quizStart"><div class="quizScore">🏆 Best Score: <span id="bestScore">0 / 10</span></div><button class="gameBtn" onclick="startQuiz()">🚀 START QUIZ NOW!</button></div><div id="quizPlay" style="display:none"><div style="display:flex;justify-content:space-between;font-weight:800"><span id="quizProgress">Question 1 / 10</span><span id="quizScoreLive">⭐ Score: 0</span></div><div class="quizBar"><div class="quizBarFill" id="quizBarFill"></div></div><div class="quizQ" id="quizQ"></div><button style="background:#fff;color:#000;border:0;padding:8px 14px;border-radius:999px;font-weight:800;cursor:pointer" onclick="readQuizQ()">🔊 Hear Question</button><div id="quizOpts"></div><div id="quizFeedback" style="font-weight:800;font-size:16px;margin:10px 0;min-height:24px"></div><button class="gameBtn" id="quizNextBtn" onclick="nextQuiz()" style="display:none">Next Question →</button></div><div id="quizEnd" style="display:none;text-align:center"><div class="stars" id="quizStars">⭐⭐⭐</div><div class="quizScore" id="quizFinal"></div><p id="quizMsg" style="margin:10px 0"></p><div id="quizWinBox" style="display:none"><div style="background:#22c55e;color:#000;padding:14px;border-radius:14px;font-weight:900;font-size:18px">🎉 YOU WON! CERTIFICATE UNLOCKED! 🎉</div><button class="gameBtn" style="background:#facc15;font-size:19px" onclick="openCertAfterWin()">🏆 CLAIM MY CERTIFICATE NOW →</button></div><div id="quizLoseBox" style="display:none"><div style="background:#ef4444;color:#fff;padding:14px;border-radius:14px;font-weight:900">😢 Need 8/10 to win. No certificate yet. Try again!</div><button class="gameBtn" onclick="startQuiz()">🔄 TRY QUIZ AGAIN</button></div></div></div></div>
+
+<div id="puzzle" class="section"><div class="card"><h2>🧩 GAME 3: SPACE PUZZLE - Memory Match!</h2><p><span class="badge">FOR KIDS 4-10</span> <span class="badge">MEMORY GAME</span></p><div class="hint">👆 Tap a card to flip it! Find 2 SAME planets!</div><div class="puzzleLevel"><button class="active" onclick="setPuzzleLevel(6,this)">😊 EASY - 6 Pairs</button><button onclick="setPuzzleLevel(8,this)">😎 MEDIUM - 8 Pairs</button></div><div style="display:flex;justify-content:space-between;font-weight:800;max-width:500px;margin:0 auto"><span>🎯 Pairs: <span id="puzzleScore">0</span></span><span>👆 Tries: <span id="puzzleTries">0</span></span><span>⏱️ Time: <span id="puzzleTime">0s</span></span></div><div class="puzzleGrid" id="puzzleGrid"></div><div id="puzzleWin" style="display:none;text-align:center"><div class="stars">🎉⭐⭐⭐🎉</div><h2 style="color:#22c55e">YOU SOLVED THE PUZZLE!</h2><p id="puzzleWinMsg"></p><button class="gameBtn danceBtn" onclick="allDance()">💃 DANCE!</button></div><button class="gameBtn" onclick="startPuzzle()">🔄 SHUFFLE & RESTART</button><button class="gameBtn" style="background:#facc15" onclick="puzzleHint()">💡 HINT - Show All (2 sec)</button></div></div>
+
+<div id="catch" class="section"><div class="card"><h2>⭐ GAME 4: CATCH THE FALLING STARS!</h2><p><span class="badge">FAST & FUN</span> <span class="badge">30 SECONDS</span> <span class="badge">DON'T TAP METEORS!</span></p><div class="hint">👆 Tap ⭐🌟🍎 to get +1! DON'T tap ☄️ Meteor or 💣 Bomb!</div><div style="display:flex;justify-content:space-between;font-weight:900;font-size:18px;max-width:500px;margin:0 auto"><span>⭐ Caught: <span id="catchScore">0</span> / 15</span><span>⏱️ Time: <span id="catchTime">30</span>s</span><span>❤️ Lives: <span id="catchLives">3</span></span></div><div id="catchArea"></div><div id="catchMsg" style="text-align:center;font-weight:800;margin:10px 0"></div><button class="gameBtn" onclick="startCatch()">🚀 START CATCH GAME!</button></div></div>
+
+<div id="rocket" class="section"><div class="card"><h2>🚀 ORIGINAL ROCKET MODEL - Learn Parts & Launch!</h2><p><span class="badge">OUR OWN DESIGN</span> <span class="badge">NOT EMOJI</span> <span class="badge">LEARN PARTS</span></p><div class="hint">👆 Tap a Part Button to learn! Then LAUNCH at GREEN zone!</div><div class="rocketPartBtns"><button class="active" onclick="showRocketPart('nose',this)">🔴 Nose Cone</button><button onclick="showRocketPart('window',this)">🪟 Window</button><button onclick="showRocketPart('body',this)">⚪ Body / Fuel Tank</button><button onclick="showRocketPart('fins',this)">🪽 Fins</button><button onclick="showRocketPart('engine',this)">🔥 Engine</button></div><div id="rocketPartInfo">🔴 <b>Nose Cone:</b> Top pointy part! It cuts air and protects astronauts inside!</div><div id="rocketArea"><div id="moonTarget">🌕</div><div style="position:absolute;top:90px;left:12px;background:rgba(0,0,0,.6);padding:8px;border-radius:10px;font-size:12px;font-weight:800;text-align:left">🇮🇳 ISRO Style<br>Team Tech Sparks<br>MOON BASE BOSS-1</div><div id="launchPad"></div><div id="rocketModel"><svg viewBox="0 0 100 280" xmlns="http://www.w3.org/2000/svg"><polygon id="part-fins-left" points="12,210 0,260 28,240" fill="#ef4444" stroke="#7f1d1d" stroke-width="2"/><polygon id="part-fins-right" points="88,210 100,260 72,240" fill="#ef4444" stroke="#7f1d1d" stroke-width="2"/><rect id="part-body" x="20" y="60" width="60" height="180" rx="8" fill="#f8fafc" stroke="#0f172a" stroke-width="3"/><rect x="20" y="140" width="60" height="22" fill="#f97316"/><text x="50" y="156" text-anchor="middle" font-size="11" font-weight="900" fill="#fff">INDIA 🇮🇳</text><circle id="part-window" cx="50" cy="95" r="18" fill="#38bdf8" stroke="#0f172a" stroke-width="3"/><circle cx="44" cy="89" r="5" fill="#fff" opacity="0.9"/><text x="50" y="103" text-anchor="middle" font-size="20">👩‍🚀</text><path id="part-nose" d="M20 60 Q50 -10 80 60 Z" fill="#ef4444" stroke="#7f1d1d" stroke-width="3"/><circle cx="50" cy="28" r="6" fill="#facc15" stroke="#92400e" stroke-width="2"/><rect id="part-engine" x="32" y="240" width="36" height="18" rx="4" fill="#334155" stroke="#0f172a" stroke-width="2"/></svg></div><div id="rocketFire"><svg viewBox="0 0 70 70" width="70" height="70"><polygon points="35,70 15,0 55,0" fill="#f97316"/><polygon points="35,70 22,0 48,0" fill="#facc15"/><polygon points="35,70 28,0 42,0" fill="#fff"/></svg></div><div id="rocketSmoke">💨💨</div><div style="position:absolute;bottom:5px;left:0;right:0;color:#fde68a;font-weight:800;font-size:13px">🌍 EARTH - Launch Pad - Sriharikota</div></div><div style="position:relative"><div id="powerBarWrap"><div id="powerZone"></div><div id="powerBar"></div></div><p style="text-align:center;font-size:12px">← Too Low | ✅ PERFECT GREEN ZONE | Too High →</p></div><div style="display:flex;justify-content:space-between;font-weight:900"><span>🚀 Launches: <span id="rocketTries">0</span> / 3</span><span>🌕 Landed: <span id="rocketWins">0</span></span></div><div id="rocketMsg" style="text-align:center;font-weight:800;margin:10px 0;font-size:18px">Press START, then LAUNCH at GREEN!</div><button class="gameBtn" id="rocketStartBtn" onclick="startRocket()">▶️ START ENGINE!</button><button class="gameBtn" style="background:#facc15;font-size:20px" id="rocketLaunchBtn" onclick="launchRocket()" disabled>🚀 LAUNCH ORIGINAL ROCKET!</button><button class="gameBtn" onclick="resetRocket()">🔄 BRING ROCKET BACK</button></div></div>
+
+<div id="zero" class="section"><div class="card"><h2>💧 GAME 6: ZERO GRAVITY - Feed Luna Floating Food!</h2><p><span class="badge">NO GRAVITY!</span> <span class="badge">LUNA FLOATS!</span> <span class="badge">EGG • CHEESE • SANDWICH</span> <span class="badge">NO VEGETABLES!</span></p><div class="hint">👩‍🚀 Luna is FLOATING! She is HUNGRY! Tap food → Food flies to Luna → Luna EATS it! Yummy Egg, Cheese, Sandwich!</div><div class="dollsRow"><div class="dollCard" style="width:110px;padding:8px"><span class="dollEmoji anim-luna" style="font-size:46px">👩‍🚀</span><p style="font-size:11px">Luna: I love Sandwich!</p></div><div class="dollCard" style="width:110px;padding:8px"><span class="dollEmoji anim-stella" style="font-size:46px">👽</span><p style="font-size:11px">Stella: I love Cheese!</p></div><div class="dollCard" style="width:110px;padding:8px"><span class="dollEmoji anim-robo" style="font-size:46px">🤖</span><p style="font-size:11px">Robo: I love Egg!</p></div></div><div style="display:flex;justify-content:space-between;font-weight:900;font-size:16px;max-width:600px;margin:0 auto;flex-wrap:wrap;gap:6px"><span>🍎 Foods: <span id="zeroFoodScore">0</span> / 10</span><span>💧 Bubbles: <span id="zeroScore">0</span> / 20</span><span>🍼 Water: <span id="zeroWater">100</span>%</span></div><div style="max-width:600px;margin:6px auto"><div style="display:flex;justify-content:space-between;font-weight:800;font-size:13px"><span>😋 Luna's Tummy:</span><span id="hungerText">Hungry! 20%</span></div><div class="hungerBar"><div class="hungerFill" id="hungerFill"></div></div></div><div style="text-align:center;font-weight:800" id="zeroModeLabel">🌌 MODE: SPACE - No Gravity! Everything FLOATS!</div><canvas id="zeroCanvas" width="800" height="460"></canvas><div class="zeroBtns"><button id="feedBtn" style="background:#22c55e;color:#000" onclick="spawnFloatingFood()">🥚🧀🥪 SEND EGG, CHEESE, SANDWICH!</button><button id="squeezeBtn" onclick="squeezeBottle()">🍼💧 PRESS BOTTLE!</button></div><div class="zeroBtns"><button id="gravityBtn" onclick="toggleGravity()" style="background:#facc15;color:#000">🌍 Switch To EARTH Gravity</button><button style="background:#22c55e;color:#000" onclick="addFloatingToy()">🧸 Add Floating Toy!</button><button style="background:#facc15;color:#000" onclick="resetZero()">🔄 Refill!</button></div><div id="zeroMsg" style="text-align:center;font-weight:800;margin:10px 0;font-size:17px">👆 Click SEND FOOD! Tap Egg / Cheese / Sandwich → It flies to Luna!</div><div id="zeroWinBox" style="display:none;text-align:center;background:#22c55e;color:#000;padding:14px;border-radius:14px;font-weight:900;font-size:18px;margin:10px 0">🎉 LUNA IS FULL & HAPPY! You are a Space Chef! 👩‍🍳⭐</div><div class="grid" style="margin-top:12px"><div class="card" style="margin:0;background:#0f172a"><h3>🌍 On EARTH</h3><p>Food FALLS on table! Water FALLS in glass! You SIT on chair!</p></div><div class="card" style="margin:0;background:#0f172a"><h3>🌌 In SPACE</h3><p>Food FLOATS! Water FLOATS as bubbles! Luna FLOATS! Astronauts CHASE food!</p></div></div></div></div>
+
+<div id="delay" class="section"><div class="card"><h2>📡 COMMUNICATION DELAY - Talk To Luna On The Moon!</h2><p><span class="badge">REAL SPACE SCIENCE</span> <span class="badge">LIGHT SPEED</span> <span class="badge">1.3 SEC TO MOON</span> <span class="badge">UP TO 22 MIN TO MARS</span></p><div class="hint">⚡ Light travels at 300,000 km per second! But Space is SO big, even light takes time!</div><h3>1️⃣ Choose Where To Send Message:</h3><div class="delayBtns"><button class="active" onclick="setDelayTarget('moon',this)">🌕 Moon - 1.3 sec delay</button><button onclick="setDelayTarget('marsNear',this)">🔴 Mars Near - 3 min delay</button><button onclick="setDelayTarget('marsFar',this)">🔴 Mars Far - 22 min delay</button><button onclick="setDelayTarget('sun',this)">☀️ Sun - 8 min delay</button></div><div style="display:flex;justify-content:space-between;font-weight:800;flex-wrap:wrap;gap:6px"><span>📍 Target: <span id="delayTargetName">🌕 Moon Base - Luna</span></span><span>📏 Distance: <span id="delayDistance">384,400 km</span></span><span>⏱️ One-Way: <span id="delayTimeText">1.3 seconds</span></span><span>🔄 Round-Trip: <span id="delayRoundTrip">2.6 seconds</span></span></div><div id="delayTrack"><div id="earthStation">🌍<br><span style="font-size:12px;font-weight:800">EARTH<br>You</span></div><div id="moonStation"><span id="delayTargetEmoji">🌕</span><br><span style="font-size:12px;font-weight:800" id="delayTargetLabel">MOON<br>Luna</span></div><div id="signalDot"></div><div style="position:absolute;top:8px;left:0;right:0;text-align:center;font-size:12px;font-weight:800;color:#fde68a" id="delayStatusText">💡 Press SEND to see light travel!</div><div style="position:absolute;bottom:6px;left:0;right:0;text-align:center;font-size:11px;color:#94a3b8">Light Speed: 300,000 km / second ⚡ - Watch yellow dot travel!</div></div><div class="delayBar"><div class="delayFill" id="delayFill"></div></div><div style="text-align:center;font-weight:800" id="delayCountdown">Ready to send!</div><h3>2️⃣ Type Message & Send:</h3><div style="display:flex;gap:8px"><input id="delayInput" style="flex:1;padding:13px;border-radius:12px;border:2px solid #facc15;background:#0f172a;color:#fff;font-weight:700" placeholder="Type message - e.g. Hi Luna! How are you?" maxlength="60" value="Hi Luna! How are you?"><button style="background:#facc15;color:#000;border:0;padding:13px 18px;border-radius:12px;font-weight:900;cursor:pointer" onclick="sendDelayMessage()">📡 SEND!</button></div><div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap"><button style="flex:1;background:#1e293b;color:#fff;border:2px solid #334155;padding:10px;border-radius:999px;font-weight:800;cursor:pointer" onclick="quickDelayMsg('Hi Luna! 👋')">👋 Hi Luna!</button><button style="flex:1;background:#1e293b;color:#fff;border:2px solid #334155;padding:10px;border-radius:999px;font-weight:800;cursor:pointer" onclick="quickDelayMsg('Are you safe? 🛡️')">🛡️ Are you safe?</button><button style="flex:1;background:#1e293b;color:#fff;border:2px solid #334155;padding:10px;border-radius:999px;font-weight:800;cursor:pointer" onclick="quickDelayMsg('Did you eat sandwich? 🥪')">🥪 Ate Sandwich?</button><button style="flex:1;background:#1e293b;color:#fff;border:2px solid #334155;padding:10px;border-radius:999px;font-weight:800;cursor:pointer" onclick="quickDelayMsg('I miss you! 💖')">💖 I miss you!</button></div><h3>💬 Space Chat - With Real Delay!</h3><div class="chatBox" id="delayChat"><div class="chatMsg waiting">📡 Space Chat Started! Send a message to Luna on the Moon! Wait for delay...</div></div><div style="display:flex;gap:8px"><button class="gameBtn" style="background:#38bdf8" onclick="demoDelayCompare()">⚡ Compare: Earth vs Moon vs Mars Delay!</button><button class="gameBtn" style="background:#facc15" onclick="clearDelayChat()">🧹 Clear Chat</button></div><div id="delayCompareBox" style="display:none;background:#0f172a;border:2px solid #facc15;border-radius:12px;padding:12px;margin-top:10px;font-weight:700"></div></div><div class="card"><h3>🧒 Why Can't Astronauts Video Call Like On Earth?</h3><p>• <b>Earth → Moon:</b> 384,400 km! Light takes <b>1.3 sec</b> one-way, <b>2.6 sec</b> for reply!<br>• <b>Earth → Mars:</b> 225 MILLION km! Light takes <b>3 to 22 MINUTES</b> one-way! You wait 6 to 44 MINUTES for reply! No live video call!<br>• <b>Real NASA:</b> NASA waits 20 minutes for Mars rover commands!</p></div><div class="card"><h3>🎮 Game: Can You Wait?</h3><p>Messages sent: <b id="delaySentCount">0</b> | Replies: <b id="delayReplyCount">0</b> | Patience Stars: <b id="delayStars">⭐</b></p></div></div>
+
+<div id="cert" class="section"><div class="card"><h2>🏆 CERTIFICATE - Only For Quiz Winners!</h2><div id="certLocked"><div class="lockBox"><div style="font-size:60px">🔒</div><h2 style="color:#facc15">Certificate is LOCKED!</h2><p>Win Quiz with <b>8 / 10 or more</b> to unlock!</p><button class="gameBtn" style="background:#facc15" onclick="document.querySelectorAll('nav button')[3].click()">🧠 GO TO QUIZ TO UNLOCK →</button></div></div><div id="certUnlocked" style="display:none"><div style="background:#22c55e;color:#000;padding:12px;border-radius:12px;font-weight:900;text-align:center">✅ UNLOCKED! You Won Quiz with <span id="unlockedScore">8 / 10</span>!</div><h3>1️⃣ What Is Your Name?</h3><input class="certInput" id="kidName" placeholder="✏️ Type Your Name - e.g. Aarav / Ananya" maxlength="30" oninput="updateCert()"><h3>2️⃣ Choose Emoji:</h3><div class="certEmojiRow" id="emojiRow"><button class="active" onclick="pickEmoji('⭐🚀🌕',this)">⭐🚀🌕</button><button onclick="pickEmoji('👩‍🚀🌟💖',this)">👩‍🚀🌟💖</button><button onclick="pickEmoji('🤖🪐✨',this)">🤖🪐✨</button><button onclick="pickEmoji('👽☀️🌍',this)">👽☀️🌍</button><button onclick="pickEmoji('🦄🌈⭐',this)">🦄🌈⭐</button></div><h3>3️⃣ Your Title:</h3><select class="certSelect" id="certType" onchange="updateCert()"><option value="QUIZ STAR - SPACE CHAMPION">🧠 QUIZ STAR - SPACE CHAMPION</option><option value="SUPER ASTRONAUT">⭐ SUPER ASTRONAUT</option><option value="JUNIOR ASTRONAUT">🚀 JUNIOR ASTRONAUT</option></select><button class="gameBtn" style="background:#facc15;font-size:19px" onclick="makeCert()">✨ MAKE MY CERTIFICATE ✨</button><div id="certAutoMsg" style="text-align:center;font-weight:800;color:#facc15;margin:8px 0"></div><div id="certPreview"><div style="font-size:22px">⭐ 🌕 ⭐</div><h2>🌕 MOON BASE BOSS 🚀</h2><p style="color:#475569;font-size:12px">NASA SPACE APPS CHALLENGE 2026 • TEAM TECH SPARKS</p><div style="font-size:26px;margin:6px 0">🏆 CERTIFICATE OF ACHIEVEMENT 🏆</div><p style="color:#475569">This certificate is proudly presented to our Quiz Champion</p><div id="certName">Your Name</div><div id="certBadge">⭐🚀🌕</div><div id="certTitle">QUIZ STAR - SPACE CHAMPION</div><div id="certStars">⭐⭐⭐</div><p style="color:#111827;font-size:14px;max-width:520px;margin:8px auto">For <b>WINNING the Space Quiz</b> with 8/10 or more in the <b>Junior Astronaut Mission Trainer</b> - Exploring 3D Solar System, Building a Moon Base, and Learning Real NASA HLS-L30 Satellite Data!</p><div id="certScore">Quiz Score: 8 / 10 • WINNER ✅</div><p style="color:#7c3aed;font-weight:800;margin-top:8px">⭐⭐⭐ You Are A Super Star Astronaut! ⭐⭐⭐</p><div id="certSign"><div><b>👩‍🚀 Luna</b><br>Chief Astronaut</div><div><b>👨‍🚀 Astro Buddy</b><br>Your Space Friend</div><div><b>🛰️ NASA Data</b><br>HLS-L30 • Landsat</div></div><div id="certDate">Date: 14 Nov 2026 • Certificate No: MBB-2026-STAR</div></div><div id="certActions" style="display:none"><button class="gameBtn" style="background:#22c55e" onclick="printCert()">🖨️ PRINT / DOWNLOAD CERTIFICATE</button><button class="gameBtn" style="background:#ec4899" onclick="shareCert()">💃 CELEBRATE!</button></div></div></div></div>
+
+<div id="nasa" class="section"><div class="card"><h2>🛰️ NASA Data - Microsoft Planetary Computer</h2><p><span class="badge">HLS-L30</span> <span class="badge">LANDSAT 8 + 9</span></p><h3>Harmonized Landsat Sentinel-2 (HLS) Version 2.0, Landsat Data</h3><p>We used <b>Microsoft Planetary Computer Data Catalog</b> → HLS-L30 → Launch in Explorer → Example Notebook. In Explorer we saw HLS-L30 photo from <b>31 Oct 2026 with 0% cloud</b>. In Example Notebook we saw NDVI.</p><p><b>Left = Natural Color</b>. <b>Right = NDVI Green</b> (where trees are). Earth has green. Moon has 0 green.</p><div class="code"># Example Notebook Code:
+collections=["hls2-l30"]
+NDVI = (NIR - Red) / (NIR + Red)
+Client.open("https://planetarycomputer.microsoft.com/api/stac/v1")</div><div class="grid" style="margin-top:12px"><div><img class="res" src="https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=800&q=80"><p><b>Landsat Satellite</b></p></div><div><img class="res" src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=800&q=80"><p><b>Forest = Green NDVI</b></p></div></div></div></div>
+
+<footer>Made by Team Tech Sparks • 2026 NASA Space Apps Challenge • Build a Junior Astronaut Mission Trainer</footer>
+<div id="astroWrap"><div id="astroBubble"><div id="astroName">🤖 Astro Buddy Says:</div><span id="astroText">Hi! Try all games! Win Quiz for Certificate!</span></div><div id="astroBtns"><button id="btnHello" onclick="astroHello()">👋 Say Hello</button><button id="btnNext" onclick="astroNext()">💬 Next Tip</button><button id="btnSpeak" onclick="astroSpeak()">🗣️ Speak</button></div><div id="astroChar" onclick="astroSpeak()"><span id="astroFace">👨‍🚀</span></div></div>
+
+<script>
+const dolls={luna:{name:"Luna",emoji:"👩‍🚀",lines:["Hi! I'm Luna! 💖 Let's go to the Moon!","I love dancing!","Moon has no air! That's why we need a Moon Base!"]},stella:{name:"Stella",emoji:"👽",lines:["Hello Earth kid! 👽 I'm Stella from Mars!","Boop! I float in space!","Mars is my home!"]},robo:{name:"Robo",emoji:"🤖",lines:["Beep Boop! 🤖 I'm Robo!","Power 70! Oxygen 70! Food 70!","Beep! Let's dance!"]}};
+let dollIndex={luna:0,stella:0,robo:0};
+function speak(t){try{speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(t);u.rate=.95;u.pitch=1.3;speechSynthesis.speak(u);}catch(e){}}
+function dollTalk(who){let d=dolls[who];let line=d.lines[dollIndex[who]%d.lines.length];dollIndex[who]++;let s1=document.getElementById('speech-'+who);let s2=document.getElementById('speech2-'+who);if(s1){s1.innerText=line;s1.classList.add('show');}if(s2){s2.innerText=line;s2.classList.add('show');}astroSay(d.name+" says: "+line,d.emoji);speak(line);setTimeout(()=>{if(s1)s1.classList.remove('show');if(s2)s2.classList.remove('show');},4000);}
+function allDance(){document.querySelectorAll('.dollCard').forEach(c=>{c.classList.add('celebrate');setTimeout(()=>c.classList.remove('celebrate'),2500);});let m="Let's dance! Luna, Stella, Robo - Let's go to the Moon!";astroSay("🎉 DANCE PARTY! "+m,"💃");speak(m);}
+let lastQuizScore=0,quizWon=false,chosenEmoji="⭐🚀🌕";
+function pickEmoji(e,btn){chosenEmoji=e;document.querySelectorAll('#emojiRow button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.getElementById('certBadge').innerText=e;}
+function updateCert(){let n=document.getElementById('kidName').value.trim()||"Your Name";document.getElementById('certName').innerText=n;document.getElementById('certTitle').innerText=document.getElementById('certType').value;}
+function tryOpenCert(btn){if(!quizWon){astroSay("🔒 Certificate LOCKED! Win Quiz with 8/10 to unlock!","🔒");speak("Certificate is locked! Win Quiz!");alert("🔒 Certificate LOCKED! Win Quiz with 8/10 to unlock!");document.querySelectorAll('nav button')[3].click();return;}showTab('cert',btn);}
+function openCertAfterWin(){let btn=document.getElementById('certNavBtn');showTab('cert',btn);}
+function unlockCertificate(){quizWon=true;let btn=document.getElementById('certNavBtn');btn.classList.remove('locked');btn.innerText="🏆 Cert";document.getElementById('certLocked').style.display='none';document.getElementById('certUnlocked').style.display='block';document.getElementById('unlockedScore').innerText=lastQuizScore+" / 10";document.getElementById('certScore').innerText="Quiz Score: "+lastQuizScore+" / 10 • WINNER ✅";}
+function makeCert(){if(!quizWon){alert("🔒 Win Quiz first!");return;}let name=document.getElementById('kidName').value.trim();if(!name){alert("Please type your name first! ✏️");document.getElementById('kidName').focus();return;}updateCert();document.getElementById('certPreview').style.display='block';document.getElementById('certActions').style.display='block';let certNo="MBB-2026-"+Math.floor(1000+Math.random()*9000);let today=new Date().toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric'});document.getElementById('certDate').innerText="Date: "+today+" • Certificate No: "+certNo;document.getElementById('certScore').innerText="Quiz Score: "+lastQuizScore+" / 10 • WINNER ✅";document.getElementById('certStars').innerText="⭐⭐⭐";allDance();astroSay("WOW! "+name+"! You got your certificate!","😍");speak("Wow! "+name+"! You got your certificate!");document.getElementById('certPreview').scrollIntoView({behavior:'smooth'});}
+function printCert(){if(!quizWon){alert("Win Quiz first!");return;}window.print();}
+function shareCert(){allDance();astroSay("Yay! Show your certificate to teacher!","🎉");speak("Yay!");}
+let currentTab='solar',tipIndex=0;
+const astroTips={solar:["Hi! I'm Astro Buddy! Meet Luna, Stella & Robo!","Click a planet! Click Earth!"],game:["Now you are MOON BASE BOSS! Keep all 4 numbers above 0!"],quiz:["Quiz time! 🧠 Win with 8/10 to unlock Certificate!"],puzzle:["Puzzle time! 🧩 Tap a card! Find 2 SAME planets!"],catch:["Catch game! ⭐ Tap stars! Avoid meteors!"],rocket:["This is OUR Original Rocket! Tap parts to learn! Then launch at GREEN!"],zero:["Zero Gravity! 💧 Luna is hungry! Send Egg, Cheese, Sandwich! No vegetables!"],delay:["Communication Delay! 📡 Send message to Moon! Wait 1.3 sec!"],cert:["Certificate time! 🏆 Type your name!"],nasa:["This is real NASA data! Landsat!"],dolls:["These are your friends! Luna dances, Stella floats, Robo counts!"]};
+function setFace(f){document.getElementById('astroFace').innerText=f;}
+function astroSay(t,f){document.getElementById('astroText').innerText=t;if(f)setFace(f);let b=document.getElementById('astroBubble');b.classList.remove('pop');void b.offsetWidth;b.classList.add('pop');}
+function astroHello(){astroSay("Hellooo! 👋 I'm Astro Buddy! Try all games!","👋");astroSpeak();}
+function astroNext(){let a=astroTips[currentTab];tipIndex=(tipIndex+1)%a.length;astroSay(a[tipIndex],"💬");astroSpeak();}
+function astroSpeak(){let t=document.getElementById('astroText').innerText;try{speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(t);u.rate=.95;u.pitch=1.3;speechSynthesis.speak(u);}catch(e){}setFace("🤩");setTimeout(()=>setFace("👨‍🚀"),900);}
+window.addEventListener('load',()=>{setTimeout(()=>{astroSay("Hellooo! 👋 I'm Astro Buddy! Try all games! Win Quiz for Certificate!","👋");astroSpeak();},1200);});
+function showTab(id,btn){document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');currentTab=id;tipIndex=0;if(id==='solar')astroSay("Welcome to 3D Solar System! 🌌 Click a planet!","🌌");if(id==='dolls')astroSay("Meet your friends! 💃 Luna, Stella & Robo!","💃");if(id==='game')astroSay("Let's play Moon Base Game! 🎮 Build your base!","🎮");if(id==='quiz')astroSay("Quiz time! 🧠 Win with 8/10 to unlock Certificate!","🧠");if(id==='puzzle')astroSay("Puzzle time! 🧩 Tap a card!","🧩");if(id==='catch')astroSay("Catch game! ⭐ Tap stars! Avoid meteors!","⭐");if(id==='rocket')astroSay("This is OUR Original Rocket! Tap parts to learn! Then launch at GREEN!","🚀");if(id==='zero')astroSay("Zero Gravity! 💧 Luna is hungry! Send Egg, Cheese, Sandwich!","💧");if(id==='delay')astroSay("Communication Delay! 📡 Send message to Moon! Wait 1.3 sec!","📡");if(id==='cert')astroSay(quizWon?"Certificate unlocked! 🏆 Type your name!":"Certificate locked! Win Quiz first!","🏆");if(id==='nasa')astroSay("This is real NASA data! 🛰️ Landsat!","🛰️");astroSpeak();window.scrollTo({top:0,behavior:'smooth'});}
+let stats={power:70,oxygen:70,food:70,shield:70},day=1,score=0;
+const scenarios=[{msg:"Day 1: Solar storm coming! What do you do?",opts:[{t:"🛡️ Close Shields (-10 Power, +20 Shield)",e:{power:-10,shield:20}},{t:"🔋 Keep Solar Panels Open (+15 Power, -15 Shield)",e:{power:15,shield:-15}}]},{msg:"Day 5: Oxygen tank leaking!",opts:[{t:"🔧 Fix Leak (-10 Food, +20 Oxygen)",e:{food:-10,oxygen:20}},{t:"🌱 Grow More Plants (+10 Oxygen, -10 Power)",e:{oxygen:10,power:-10}}]},{msg:"Day 10: Astronauts hungry!",opts:[{t:"🍎 Grow Food in Greenhouse (-15 Power, +25 Food)",e:{power:-15,food:25}},{t:"📦 Use Emergency Food (+10 Food, -10 Oxygen)",e:{food:10,oxygen:-10}}]},{msg:"Day 15: Meteor shower!",opts:[{t:"🛡️ Extra Shielding (-10 Power, +25 Shield)",e:{power:-10,shield:25}},{t:"🏃 Hide Underground (+10 Shield, -10 Food)",e:{shield:10,food:-10}}]},{msg:"Day 20: Solar panels dusty!",opts:[{t:"🧹 Clean Panels (-10 Oxygen, +25 Power)",e:{oxygen:-10,power:25}},{t:"🔋 Save Power (-5 All, +10 Power)",e:{power:10,food:-5,oxygen:-5}}]},{msg:"Day 25: Water found!",opts:[{t:"💧 Use Water for Plants (+15 Food, +15 Oxygen)",e:{food:15,oxygen:15}},{t:"🧊 Save Water (+10 All)",e:{power:10,food:10,oxygen:10,shield:10}}]}];
+function renderGame(){document.getElementById('power').innerText=stats.power+'%';document.getElementById('oxygen').innerText=stats.oxygen+'%';document.getElementById('food').innerText=stats.food+'%';document.getElementById('shield').innerText=stats.shield+'%';document.getElementById('day').innerText=day+' / 30';document.getElementById('score').innerText=score;let sc=scenarios[(day-1)%scenarios.length];document.getElementById('msg').innerText=sc.msg;let ch=document.getElementById('choices');ch.innerHTML='';sc.opts.forEach(o=>{let b=document.createElement('button');b.innerText=o.t;b.onclick=()=>{for(let k in o.e) stats[k]=Math.max(0,Math.min(100,stats[k]+o.e[k]));day++;score+=10;if(Object.values(stats).some(v=>v<=0)){document.getElementById('msg').innerText='💥 GAME OVER!';ch.innerHTML='';astroSay("Oh no! 😢 Try again!","😢");astroSpeak();}else if(day>30){document.getElementById('msg').innerText='🎉 YOU WIN! Score: '+score;ch.innerHTML='';allDance();astroSay("WOW! 🎉 You did it!","😍");astroSpeak();}else{astroSay("Good choice! Day "+day+" now.","🤔");renderGame();}};ch.appendChild(b);});}
+function startGame(){stats={power:70,oxygen:70,food:70,shield:70};day=1;score=0;astroSay("New mission! Let's survive 30 days!","🚀");astroSpeak();renderGame();}
+renderGame();
+const quizData=[{q:"☀️ Which planet is closest to the Sun?",opts:["Venus","Mercury","Mars","Earth"],ans:1,explain:"Mercury is closest!"},{q:"🔥 Which planet is HOTTEST?",opts:["Mars","Jupiter","Venus","Saturn"],ans:2,explain:"Venus is hottest!"},{q:"🪐 Which planet has rings?",opts:["Earth","Mars","Saturn","Mercury"],ans:2,explain:"Saturn has ice rings!"},{q:"🌍 Which planet is our home?",opts:["Mars","Venus","Jupiter","Earth"],ans:3,explain:"Earth!"},{q:"🔴 Which is Red Planet?",opts:["Mars","Neptune","Uranus","Venus"],ans:0,explain:"Mars is Red!"},{q:"🌕 Does Moon have air?",opts:["Yes","No, Moon has no air","A little","Only at night"],ans:1,explain:"Moon has NO air!"},{q:"🌱 What do plants make?",opts:["Power","Oxygen","Shielding","Rocks"],ans:1,explain:"Plants make Oxygen!"},{q:"🛰️ What does NDVI find?",opts:["Rocks","Trees / Green plants","Water on Moon","Aliens"],ans:1,explain:"NDVI finds trees!"},{q:"☀️ Solar panels use?",opts:["Moonlight","Sunlight","Wind","Rain"],ans:1,explain:"Solar panels use Sunlight!"},{q:"📡 How long does message take Earth to Moon?",opts:["Instant","1.3 seconds","1 hour","1 day"],ans:1,explain:"1.3 seconds! Light takes time!"}];
+let qIndex=0,qScore=0,qBest=0,qAnswered=false;
+function startQuiz(){qIndex=0;qScore=0;qAnswered=false;document.getElementById('quizStart').style.display='none';document.getElementById('quizEnd').style.display='none';document.getElementById('quizPlay').style.display='block';document.getElementById('quizWinBox').style.display='none';document.getElementById('quizLoseBox').style.display='none';showQuizQ();astroSay("Quiz started! Win with 8/10!","🧠");astroSpeak();}
+function showQuizQ(){qAnswered=false;let qq=quizData[qIndex];document.getElementById('quizProgress').innerText="Question "+(qIndex+1)+" / "+quizData.length;document.getElementById('quizScoreLive').innerText="⭐ Score: "+qScore;document.getElementById('quizBarFill').style.width=(qIndex*100/quizData.length)+"%";document.getElementById('quizQ').innerText=qq.q;document.getElementById('quizFeedback').innerText="";document.getElementById('quizNextBtn').style.display='none';let oDiv=document.getElementById('quizOpts');oDiv.innerHTML='';qq.opts.forEach((opt,i)=>{let b=document.createElement('button');b.className='quizOpt';b.innerText=["A. ","B. ","C. ","D. "][i]+opt;b.onclick=()=>checkQuiz(i,b);oDiv.appendChild(b);});readQuizQ();}
+function readQuizQ(){let qq=quizData[qIndex];speak(qq.q+" Option A "+qq.opts[0]+". Option B "+qq.opts[1]+". Option C "+qq.opts[2]+". Option D "+qq.opts[3]);}
+function checkQuiz(i,btn){if(qAnswered)return;qAnswered=true;let qq=quizData[qIndex];let all=document.querySelectorAll('.quizOpt');all.forEach((b,idx)=>{if(idx===qq.ans)b.classList.add('correct');b.disabled=true;});if(i===qq.ans){qScore++;btn.classList.add('correct');document.getElementById('quizFeedback').innerText="✅ CORRECT! "+qq.explain;document.getElementById('quizFeedback').style.color="#22c55e";astroSay("Yay! Correct! "+qq.explain,"😍");speak("Yay! Correct!");}else{btn.classList.add('wrong');document.getElementById('quizFeedback').innerText="❌ Oops! Right answer is: "+qq.opts[qq.ans]+". "+qq.explain;document.getElementById('quizFeedback').style.color="#f87171";astroSay("Oops! Right answer is "+qq.opts[qq.ans],"🤔");speak("Oops!");}document.getElementById('quizScoreLive').innerText="⭐ Score: "+qScore;document.getElementById('quizNextBtn').style.display='block';}
+function nextQuiz(){qIndex++;if(qIndex>=quizData.length){endQuiz();}else{showQuizQ();}}
+function endQuiz(){lastQuizScore=qScore;document.getElementById('quizPlay').style.display='none';document.getElementById('quizEnd').style.display='block';if(qScore>qBest){qBest=qScore;document.getElementById('bestScore').innerText=qBest+" / "+quizData.length;}let stars=qScore>=8?"⭐⭐⭐":qScore>=5?"⭐⭐":"⭐";document.getElementById('quizStars').innerText=stars;document.getElementById('quizFinal').innerText="Your Score: "+qScore+" / "+quizData.length;if(qScore>=8){document.getElementById('quizMsg').innerText="🎉 WOW! YOU WON! Certificate UNLOCKED!";document.getElementById('quizWinBox').style.display='block';unlockCertificate();allDance();astroSay("WOW! You WON Quiz! Certificate UNLOCKED!","😍");speak("Wow! You won Quiz! Certificate unlocked!");}else{document.getElementById('quizMsg').innerText="You got "+qScore+" / "+quizData.length+". Need 8 to win Certificate. Try again!";document.getElementById('quizLoseBox').style.display='block';astroSay("Oops! Need 8! Try again!","😢");speak("Oops! Try again!");}}
+let puzzleLevelCount=6,puzzleFirst=null,puzzleLock=false,puzzleMatched=0,puzzleTries=0,puzzleStartTime=0,puzzleTimer=null;
+const allPuzzleEmojis=[{emoji:"☀️",name:"Sun"},{emoji:"🌍",name:"Earth"},{emoji:"🔴",name:"Mars"},{emoji:"🪐",name:"Saturn"},{emoji:"🌕",name:"Moon"},{emoji:"🚀",name:"Rocket"},{emoji:"⭐",name:"Star"},{emoji:"👽",name:"Alien"}];
+function setPuzzleLevel(n,btn){puzzleLevelCount=n;document.querySelectorAll('.puzzleLevel button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');startPuzzle();}
+function startPuzzle(){puzzleMatched=0;puzzleTries=0;puzzleFirst=null;puzzleLock=false;document.getElementById('puzzleWin').style.display='none';document.getElementById('puzzleScore').innerText="0";document.getElementById('puzzleTries').innerText="0";document.getElementById('puzzleTime').innerText="0s";clearInterval(puzzleTimer);puzzleStartTime=Date.now();puzzleTimer=setInterval(()=>{document.getElementById('puzzleTime').innerText=Math.floor((Date.now()-puzzleStartTime)/1000)+"s";},1000);let chosen=allPuzzleEmojis.slice(0,puzzleLevelCount);let cards=[...chosen,...chosen].sort(()=>Math.random()-0.5);let grid=document.getElementById('puzzleGrid');grid.innerHTML='';cards.forEach((item)=>{let d=document.createElement('div');d.className='puzzleCard';d.innerText="❓";d.dataset.name=item.name;d.dataset.emoji=item.emoji;d.onclick=()=>flipPuzzleCard(d);grid.appendChild(d);});astroSay("Puzzle started! 🧩 Tap a card!","🧩");speak("Puzzle started!");}
+function flipPuzzleCard(card){if(puzzleLock||card.classList.contains('flipped')||card.classList.contains('matched'))return;card.classList.add('flipped');card.innerText=card.dataset.emoji;if(!puzzleFirst){puzzleFirst=card;return;}puzzleTries++;document.getElementById('puzzleTries').innerText=puzzleTries;if(puzzleFirst.dataset.name===card.dataset.name){let first=puzzleFirst;puzzleFirst=null;setTimeout(()=>{first.classList.add('matched');card.classList.add('matched');puzzleMatched++;document.getElementById('puzzleScore').innerText=puzzleMatched;astroSay("Yay! You found "+first.dataset.name+"!","😍");speak("Yay!");if(puzzleMatched===puzzleLevelCount){puzzleWin();}},300);}else{puzzleLock=true;let first=puzzleFirst;puzzleFirst=null;first.classList.add('wrongShake');card.classList.add('wrongShake');setTimeout(()=>{first.classList.remove('flipped','wrongShake');card.classList.remove('flipped','wrongShake');first.innerText="❓";card.innerText="❓";puzzleLock=false;},800);}}
+function puzzleHint(){let cards=document.querySelectorAll('.puzzleCard:not(.matched)');cards.forEach(c=>{c.classList.add('flipped');c.innerText=c.dataset.emoji;});setTimeout(()=>{cards.forEach(c=>{if(!c.classList.contains('matched')){c.classList.remove('flipped');c.innerText="❓";}});},2000);}
+function puzzleWin(){clearInterval(puzzleTimer);let time=Math.floor((Date.now()-puzzleStartTime)/1000);document.getElementById('puzzleWin').style.display='block';document.getElementById('puzzleWinMsg').innerText="You found all "+puzzleLevelCount+" pairs in "+puzzleTries+" tries and "+time+" seconds!";allDance();astroSay("WOW! You solved the puzzle!","😍");speak("Wow! You solved the puzzle!");}
+startPuzzle();
+let catchScore=0,catchLives=3,catchTimeLeft=30,catchInterval=null,catchSpawn=null,catchRunning=false;
+function startCatch(){catchScore=0;catchLives=3;catchTimeLeft=30;catchRunning=true;document.getElementById('catchScore').innerText="0";document.getElementById('catchLives').innerText="3";document.getElementById('catchTime').innerText="30";document.getElementById('catchMsg').innerText="Go! Tap stars! Avoid meteors!";document.getElementById('catchArea').innerHTML="";clearInterval(catchInterval);clearInterval(catchSpawn);catchInterval=setInterval(()=>{catchTimeLeft--;document.getElementById('catchTime').innerText=catchTimeLeft;if(catchTimeLeft<=0){endCatch(true);}},1000);catchSpawn=setInterval(spawnCatchItem,700);astroSay("Catch game started! Tap stars!","⭐");speak("Catch game started!");}
+function spawnCatchItem(){if(!catchRunning)return;let area=document.getElementById('catchArea');let isBad=Math.random()<0.25;let el=document.createElement('div');let goodEmojis=["⭐","🌟","🍎","🍓","💎"];let badEmojis=["☄️","💣","👾"];el.innerText=isBad?badEmojis[Math.floor(Math.random()*badEmojis.length)]:goodEmojis[Math.floor(Math.random()*goodEmojis.length)];el.className=isBad?"catchStar":"catchStar twinkle";el.style.left=Math.random()*85+"%";el.style.animationDuration=(2+Math.random()*1.5)+"s";el.onclick=(e)=>{e.stopPropagation();if(!catchRunning)return;if(isBad){catchLives--;document.getElementById('catchLives').innerText=catchLives;astroSay("Ouch! Meteor!","😢");speak("Ouch!");el.remove();if(catchLives<=0){endCatch(false);}}else{catchScore++;document.getElementById('catchScore').innerText=catchScore;astroSay("Yay! Star! "+catchScore,"😍");speak("Yay!");el.remove();if(catchScore>=15){endCatch(true);}}};area.appendChild(el);setTimeout(()=>{if(el.parentNode)el.remove();},4000);}
+function endCatch(win){if(!catchRunning)return;catchRunning=false;clearInterval(catchInterval);clearInterval(catchSpawn);document.getElementById('catchArea').innerHTML="";if(win&&catchScore>=15){document.getElementById('catchMsg').innerText="🎉 YOU WIN! You caught "+catchScore+" stars!";allDance();astroSay("WOW! You caught all stars!","😍");speak("Wow! You caught all stars!");}else if(catchLives<=0){document.getElementById('catchMsg').innerText="💥 Oh no! Lost all lives! Try again!";astroSay("Oh no! Try again!","😢");speak("Oh no!");}else{document.getElementById('catchMsg').innerText="⏱️ Time up! You caught "+catchScore+" stars. Need 15!";astroSay("Time up! Try again!","🤔");speak("Time up!");}}
+function showRocketPart(part,btn){document.querySelectorAll('.rocketPartBtns button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');let info={nose:"🔴 <b>Nose Cone:</b> Pointy top! It cuts air like a knife! It protects Luna inside! Like a helmet!",window:"🪟 <b>Window:</b> Luna looks out from here! She sees Earth, Moon and stars! Wave to Luna!",body:"⚪ <b>Body / Fuel Tank:</b> Big white tank! It holds FUEL - like petrol for rocket! Without fuel, rocket cannot fly!",fins:"🪽 <b>Fins:</b> Red wings at bottom! They keep rocket STRAIGHT! Like tail of fish!",engine:"🔥 <b>Engine:</b> Bottom part! It burns fuel and makes BIG FIRE! Fire pushes rocket UP to Moon! Whoosh!"};document.getElementById('rocketPartInfo').innerHTML=info[part];astroSay(info[part].replace(/<[^>]*>/g,''),"🚀");speak(info[part].replace(/<[^>]*>/g,''));document.querySelectorAll('#rocketModel svg [id^=\"part-\"]').forEach(el=>el.style.filter='');let target=document.getElementById('part-'+part);if(target) target.style.filter='drop-shadow(0 0 8px #facc15) brightness(1.3)';}
+let rocketPower=0,rocketInterval=null,rocketRunning=false,rocketTries=0,rocketWins=0,rocketLaunched=false;
+function startRocket(){rocketTries=0;rocketWins=0;rocketPower=0;document.getElementById('rocketTries').innerText="0";document.getElementById('rocketWins').innerText="0";document.getElementById('rocketMsg').innerText="Engine ON! Watch bar! Tap LAUNCH at GREEN!";document.getElementById('rocketModel').style.bottom="32px";document.getElementById('rocketFire').classList.remove('show');document.getElementById('rocketSmoke').classList.remove('show');document.getElementById('rocketLaunchBtn').disabled=false;document.getElementById('rocketStartBtn').innerText="🔄 RESTART ENGINE";rocketRunning=true;rocketLaunched=false;clearInterval(rocketInterval);rocketInterval=setInterval(()=>{if(!rocketRunning)return;rocketPower+=2;if(rocketPower>100)rocketPower=0;document.getElementById('powerBar').style.width=rocketPower+"%";},30);astroSay("Rocket engine started! Wait for GREEN!","🚀");speak("Rocket engine started!");}
+function launchRocket(){if(!rocketRunning||rocketLaunched)return;rocketLaunched=true;clearInterval(rocketInterval);rocketTries++;document.getElementById('rocketTries').innerText=rocketTries;let rocket=document.getElementById('rocketModel');document.getElementById('rocketFire').classList.add('show');document.getElementById('rocketSmoke').classList.add('show');if(rocketPower>=70&&rocketPower<=90){rocket.style.bottom="320px";document.getElementById('rocketMsg').innerText="🎉 PERFECT LAUNCH! Our Original Rocket landed on the MOON! 🌕 Luna is happy!";rocketWins++;document.getElementById('rocketWins').innerText=rocketWins;allDance();astroSay("PERFECT! Our rocket landed on the Moon!","😍");speak("Perfect! Our rocket landed on the Moon!");}else if(rocketPower<70){rocket.style.bottom="80px";document.getElementById('rocketMsg').innerText="💥 Too LOW! Rocket fell down! Try GREEN!";astroSay("Too low! Try again!","😢");speak("Too low!");}else{rocket.style.bottom="380px";document.getElementById('rocketMsg').innerText="💫 Too HIGH! Rocket flew past Moon!";astroSay("Too high! Try again!","🤔");speak("Too high!");}setTimeout(()=>{document.getElementById('rocketFire').classList.remove('show');document.getElementById('rocketSmoke').classList.remove('show');if(rocketTries<3){rocketPower=0;rocketLaunched=false;rocketRunning=true;clearInterval(rocketInterval);rocketInterval=setInterval(()=>{if(!rocketRunning)return;rocketPower+=2;if(rocketPower>100)rocketPower=0;document.getElementById('powerBar').style.width=rocketPower+"%";},30);rocket.style.bottom="32px";document.getElementById('rocketMsg').innerText+=" Try "+(rocketTries+1)+" of 3!";}else{rocketRunning=false;document.getElementById('rocketLaunchBtn').disabled=true;}},2000);}
+function resetRocket(){clearInterval(rocketInterval);rocketPower=0;rocketRunning=false;rocketTries=0;rocketWins=0;document.getElementById('rocketTries').innerText="0";document.getElementById('rocketWins').innerText="0";document.getElementById('powerBar').style.width="0%";document.getElementById('rocketModel').style.bottom="32px";document.getElementById('rocketFire').classList.remove('show');document.getElementById('rocketSmoke').classList.remove('show');document.getElementById('rocketMsg').innerText="Press START, then LAUNCH at GREEN!";document.getElementById('rocketStartBtn').innerText="▶️ START ENGINE!";document.getElementById('rocketLaunchBtn').disabled=true;}
+let zeroCanvas=document.getElementById('zeroCanvas');
+let zctx=zeroCanvas.getContext('2d');
+let zeroBubbles=[], zeroToys=[], zeroFoods=[], zeroScore=0, zeroFoodScore=0, zeroWater=100, zeroGravity=false;
+let zeroBottle={x:60,y:300,w:60,h:110};
+let zeroLuna={x:600,y:180,mood:"hungry"};
+let zeroFoodNames={"🍎":"Apple","🍕":"Pizza","🍌":"Banana","🍩":"Donut","🍓":"Strawberry","🧀":"Cheese","🥚":"Egg","🥪":"Sandwich","🍔":"Burger","🍫":"Chocolate","🥛":"Milk","🍪":"Cookie"};
+function drawZero(){zctx.clearRect(0,0,zeroCanvas.width,zeroCanvas.height);for(let i=0;i<40;i++){zctx.fillStyle="rgba(255,255,255,.7)";zctx.fillRect((i*173)%800,(i*97)%460,2,2);}zctx.font="60px Arial";zctx.fillText("🌕",710,70);zctx.font="14px Arial";zctx.fillStyle="#fff";zctx.fillText(zeroGravity?"🌍 EARTH - Gravity ON! Food & Water FALL!":"🌌 SPACE - No Gravity! Everything FLOATS!",220,28);let lunaY = zeroGravity? 320 : zeroLuna.y + Math.sin(Date.now()/400)*14;zctx.font="72px Arial";zctx.fillText("👩‍🚀",zeroLuna.x,lunaY+60);zctx.font="16px Arial";zctx.fillStyle="#fff";zctx.fillText(zeroLuna.mood==="full"?"😋 Luna":"😮 Luna",zeroLuna.x+8,lunaY+85);if(zeroLuna.mood==="hungry") zctx.fillText("I'm hungry! Feed me! 🥪",zeroLuna.x-30,lunaY+105);if(zeroLuna.mood==="full") zctx.fillText("Yum! I'm FULL! Thank you! 💖",zeroLuna.x-40,lunaY+105);if(zeroLuna.mood==="eating") zctx.fillText("Nom Nom Nom! 😋 Yummy!",zeroLuna.x-20,lunaY+105);zctx.fillStyle="#38bdf8";zctx.fillRect(zeroBottle.x,zeroBottle.y,zeroBottle.w,zeroBottle.h);zctx.fillStyle="#0ea5e9";zctx.fillRect(zeroBottle.x,zeroBottle.y,zeroBottle.w,zeroBottle.h*zeroWater/100);zctx.fillStyle="#fff";zctx.font="40px Arial";zctx.fillText("🍼",zeroBottle.x+5,zeroBottle.y+70);zctx.fillStyle="#fff";zctx.font="13px Arial";zctx.fillText("BOTTLE - TAP ME!",zeroBottle.x-10,zeroBottle.y+130);zeroBubbles.forEach(b=>{zctx.beginPath();zctx.arc(b.x,b.y,b.r,0,Math.PI*2);zctx.fillStyle="rgba(56,189,248,.75)";zctx.fill();zctx.strokeStyle="#fff";zctx.lineWidth=2;zctx.stroke();zctx.beginPath();zctx.arc(b.x-b.r*0.3,b.y-b.r*0.3,b.r*0.3,0,Math.PI*2);zctx.fillStyle="rgba(255,255,255,.9)";zctx.fill();});zeroFoods.forEach(f=>{zctx.font="42px Arial";zctx.fillText(f.emoji,f.x,f.y);zctx.font="12px Arial";zctx.fillStyle="#fff";zctx.fillText(f.name,f.x,f.y+18);});zeroToys.forEach(t=>{zctx.font="36px Arial";zctx.fillText(t.emoji,t.x,t.y);});requestAnimationFrame(updateZero);}
+function updateZero(){if(zeroGravity){zeroBubbles.forEach(b=>{b.vy+=0.3;b.x+=b.vx;b.y+=b.vy;if(b.y>450){b.y=450;b.vy=0;b.vx=0;}});zeroFoods.forEach(f=>{if(f.flying){let dx=zeroLuna.x+30-f.x, dy=(zeroLuna.y+30)-f.y;f.x+=dx*0.12;f.y+=dy*0.12;if(Math.abs(dx)<15&&Math.abs(dy)<15){eatFood(f);}}else{f.vy+=0.25;f.x+=f.vx;f.y+=f.vy;if(f.y>420){f.y=420;f.vy=0;}}});zeroToys.forEach(t=>{t.vy+=0.3;t.x+=t.vx;t.y+=t.vy;if(t.y>420){t.y=420;t.vy=0;}});}else{zeroBubbles.forEach(b=>{b.x+=b.vx;b.y+=b.vy;b.vy+=Math.sin(Date.now()/500+b.x)*0.01;if(b.x<10||b.x>790)b.vx*=-1;if(b.y<40||b.y>450)b.vy*=-1;});zeroFoods.forEach(f=>{if(f.flying){let dx=zeroLuna.x+30-f.x, dy=(zeroLuna.y+30)-f.y;f.x+=dx*0.12;f.y+=dy*0.12;if(Math.abs(dx)<15&&Math.abs(dy)<15){eatFood(f);}}else{f.x+=f.vx;f.y+=f.vy;f.vy+=Math.sin(Date.now()/600+f.x)*0.02;if(f.x<10||f.x>760)f.vx*=-1;if(f.y<50||f.y>430)f.vy*=-1;}});zeroToys.forEach(t=>{t.x+=t.vx;t.y+=t.vy;if(t.x<0||t.x>770)t.vx*=-1;if(t.y<30||t.y>430)t.vy*=-1;});}drawZero();}
+function eatFood(f){let idx=zeroFoods.indexOf(f);if(idx>-1) zeroFoods.splice(idx,1);zeroFoodScore++;document.getElementById('zeroFoodScore').innerText=zeroFoodScore;let hunger=Math.min(100,20+zeroFoodScore*8);document.getElementById('hungerFill').style.width=hunger+"%";document.getElementById('hungerText').innerText=hunger>=100?"FULL! 100% - Luna is Happy! 💖":hunger>=60?"Getting Full! "+hunger+"%":"Hungry! "+hunger+"%";zeroLuna.mood="eating";let extra="";if(f.name==="Sandwich") extra=" Yummy Sandwich! My Favourite!";if(f.name==="Cheese") extra=" Yummy Cheese!";if(f.name==="Egg") extra=" Yummy Egg!";document.getElementById('zeroMsg').innerText="😋 Yum! Luna ate "+f.name+"!"+extra+" "+zeroFoodScore+" / 10 foods!";astroSay("Yum! Luna ate "+f.name+extra,"😋");speak("Yum! Luna ate "+f.name+extra);setTimeout(()=>{if(zeroFoodScore>=10){zeroLuna.mood="full";}else{zeroLuna.mood="hungry";}},1200);if(zeroFoodScore>=10){document.getElementById('zeroWinBox').style.display='block';document.getElementById('zeroMsg').innerText="🎉 LUNA IS FULL & HAPPY! You are a Space Chef!";allDance();astroSay("WOW! Luna is full! You are a Space Chef!","😍");speak("Wow! Luna is full!");}}
+function spawnFloatingFood(){let foods=["🥚","🧀","🥪","🍔","🍕","🍩","🍓","🍫","🥛","🍎","🍌","🍪"];for(let i=0;i<3;i++){let e=foods[Math.floor(Math.random()*foods.length)];zeroFoods.push({emoji:e,name:zeroFoodNames[e]||"Food",x:150+Math.random()*400,y:80+Math.random()*200,vx:(Math.random()-0.5)*2.5,vy:(Math.random()-0.5)*2.5,flying:false});}document.getElementById('zeroMsg').innerText="🥚🧀🥪 Food is FLOATING! Tap Egg / Cheese / Sandwich → It flies to Luna!";astroSay("Food is floating! Tap Egg, Cheese, Sandwich to feed Luna!","🥪");speak("Food is floating! Tap Egg, Cheese, Sandwich!");}
+function squeezeBottle(){if(zeroWater<=0){document.getElementById('zeroMsg').innerText="🍼 Bottle EMPTY! Click Refill!";return;}zeroWater=Math.max(0,zeroWater-10);document.getElementById('zeroWater').innerText=zeroWater;for(let i=0;i<5;i++){zeroBubbles.push({x:zeroBottle.x+70,y:zeroBottle.y+30+Math.random()*40,r:10+Math.random()*14,vx:2+Math.random()*3,vy:(Math.random()-0.5)*3});}document.getElementById('zeroMsg').innerText=zeroGravity?"💧 On EARTH water FALLS DOWN!":"💧 WOW! In SPACE water FLIES as bubbles!";astroSay(zeroGravity?"On Earth water falls down!":"Wow! In space water flies!","💧");speak(zeroGravity?"On Earth water falls down!":"Wow! In space water flies!");}
+function toggleGravity(){zeroGravity=!zeroGravity;document.getElementById('zeroModeLabel').innerText=zeroGravity?"🌍 MODE: EARTH - Gravity ON! Food & Water FALL!":"🌌 MODE: SPACE - No Gravity! Everything FLOATS!";document.getElementById('gravityBtn').innerText=zeroGravity?"🌌 Switch To SPACE - No Gravity":"🌍 Switch To EARTH Gravity";document.getElementById('zeroMsg').innerText=zeroGravity?"🌍 Now on EARTH! Food FALLS!":"🌌 Now in SPACE! Food FLOATS!";astroSay(zeroGravity?"Now on Earth! Food falls!":"Now in Space! Food floats!","🌍");speak(zeroGravity?"Now on Earth!":"Now in Space!");}
+function addFloatingToy(){let emojis=["🧸","✏️","⚽","🎈","📱"];let e=emojis[Math.floor(Math.random()*emojis.length)];zeroToys.push({emoji:e,x:300+Math.random()*300,y:100+Math.random()*200,vx:(Math.random()-0.5)*2,vy:(Math.random()-0.5)*2});document.getElementById('zeroMsg').innerText="🧸 Look! "+e+" is FLOATING!";}
+function resetZero(){zeroBubbles=[];zeroToys=[];zeroFoods=[];zeroScore=0;zeroFoodScore=0;zeroWater=100;zeroLuna.mood="hungry";document.getElementById('zeroScore').innerText="0";document.getElementById('zeroFoodScore').innerText="0";document.getElementById('zeroWater').innerText="100";document.getElementById('hungerFill').style.width="20%";document.getElementById('hungerText').innerText="Hungry! 20%";document.getElementById('zeroWinBox').style.display='none';document.getElementById('zeroMsg').innerText="🍼 Refilled! Click SEND FOOD!";}
+zeroCanvas.addEventListener('click',function(e){let rect=zeroCanvas.getBoundingClientRect();let mx=(e.clientX-rect.left)*(zeroCanvas.width/rect.width);let my=(e.clientY-rect.top)*(zeroCanvas.height/rect.height);if(mx>=zeroBottle.x&&mx<=zeroBottle.x+zeroBottle.w&&my>=zeroBottle.y&&my<=zeroBottle.y+zeroBottle.h){squeezeBottle();return;}for(let i=zeroFoods.length-1;i>=0;i--){let f=zeroFoods[i];if(Math.abs(mx-f.x)<40&&Math.abs(my-f.y)<40){if(!f.flying){f.flying=true;document.getElementById('zeroMsg').innerText="🚀 "+f.name+" is FLYING to Luna!";astroSay(f.name+" is flying to Luna!","🚀");speak(f.name+" is flying to Luna!");}return;}}for(let i=zeroBubbles.length-1;i>=0;i--){let b=zeroBubbles[i];let dx=mx-b.x,dy=my-b.y;if(dx*dx+dy*dy<(b.r+15)*(b.r+15)){zeroBubbles.splice(i,1);zeroScore++;document.getElementById('zeroScore').innerText=zeroScore;document.getElementById('zeroMsg').innerText="💧 Yay! Caught bubble "+zeroScore+"!";astroSay("Yay! Caught bubble!","💧");speak("Yay! Caught!");return;}}});
+drawZero();
+let delayTarget='moon';
+let delayData={
+moon:{name:"🌕 Moon Base - Luna",emoji:"🌕",label:"MOON<br>Luna",distance:"384,400 km",oneWayText:"1.3 seconds",roundTrip:"2.6 seconds",delayMs:1300,realDelay:"1.3 sec",replies:["Hi! I got your message! 😍 I'm safe on Moon!","Yummy! I ate Egg, Cheese, Sandwich! 🥪","Moon is beautiful! I can see Earth! 🌍","I miss you too! 💖 Come visit Moon soon!","Luna is dancing! 💃 Come dance with me!"]},
+marsNear:{name:"🔴 Mars Near - Stella",emoji:"🔴",label:"MARS<br>Stella",distance:"54,600,000 km",oneWayText:"3 minutes",roundTrip:"6 minutes",delayMs:6000,realDelay:"3 min",replies:["Hi from Mars! 👽 It took 3 min for your message to reach me!","Mars is RED! So cool! 🔴","I found a rock! It looks like a star! ⭐","Hello Earth! I miss you! 💖"]},
+marsFar:{name:"🔴 Mars Far - Stella",emoji:"🔴",label:"MARS<br>Stella",distance:"401,000,000 km",oneWayText:"22 minutes",roundTrip:"44 minutes",delayMs:12000,realDelay:"22 min",replies:["Wow! Your message took 22 MINUTES to reach Mars! 😮","Mars is very far! I waited long! ⏰","Thank you for waiting patiently! You are a Patience Star! ⭐","Stella says Hi from far Mars! 👽💖"]},
+sun:{name:"☀️ Sun - Solar Station",emoji:"☀️",label:"SUN<br>Station",distance:"149,600,000 km",oneWayText:"8 minutes",roundTrip:"16 minutes",delayMs:8000,realDelay:"8 min",replies:["Hello from Sun Station! ☀️ It's very HOT here! 🔥","Light from Sun takes 8 min to reach Earth! That's why Sun looks like 8 min ago!","Stay cool! Drink water! 💧"]}
+};
+let delaySent=0,delayReplies=0,delayBusy=false;
+function setDelayTarget(t,btn){delayTarget=t;document.querySelectorAll('.delayBtns button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');let d=delayData[t];document.getElementById('delayTargetName').innerText=d.name;document.getElementById('delayDistance').innerText=d.distance;document.getElementById('delayTimeText').innerText=d.oneWayText;document.getElementById('delayRoundTrip').innerText=d.roundTrip;document.getElementById('delayTargetEmoji').innerText=d.emoji;document.getElementById('delayTargetLabel').innerHTML=d.label;document.getElementById('delayStatusText').innerText="💡 Ready! Send message to "+d.name+" - Delay: "+d.oneWayText+" one-way!";astroSay("Now sending to "+d.name+"! Delay is "+d.oneWayText+"!","📡");speak("Now sending to "+d.name);}
+function quickDelayMsg(txt){document.getElementById('delayInput').value=txt;sendDelayMessage();}
+function sendDelayMessage(){if(delayBusy){astroSay("Wait! Message is still travelling in space! Be patient!","⏰");speak("Wait! Message is still travelling!");return;}let txt=document.getElementById('delayInput').value.trim();if(!txt){alert("Type a message first!");return;}let d=delayData[delayTarget];delaySent++;document.getElementById('delaySentCount').innerText=delaySent;let chat=document.getElementById('delayChat');let you=document.createElement('div');you.className='chatMsg you';you.innerText="🧒 You (Earth): "+txt+"  • Sent! Travelling at light speed...";chat.appendChild(you);chat.scrollTop=chat.scrollHeight;let waiting=document.createElement('div');waiting.className='chatMsg waiting';waiting.id='delayWaitingMsg';waiting.innerText="⏳ Message travelling to "+d.name+"... Light speed! Wait "+d.oneWayText+"...";chat.appendChild(waiting);chat.scrollTop=chat.scrollHeight;delayBusy=true;document.getElementById('delayStatusText').innerText="📡 Sending... Yellow dot is your message travelling at light speed!";document.getElementById('delayCountdown').innerText="⏳ Travelling... 0%";let dot=document.getElementById('signalDot');dot.style.display='block';dot.classList.remove('returning');let startTime=Date.now();let anim=setInterval(()=>{let elapsed=Date.now()-startTime;let progress=Math.min(1,elapsed/d.delayMs);let track=document.getElementById('delayTrack');let trackW=track.clientWidth;dot.style.left=(60 + progress*(trackW-140))+"px";document.getElementById('delayFill').style.width=(progress*50)+"%";document.getElementById('delayCountdown').innerText="⏳ Sending to "+d.name+"... "+Math.floor(progress*100)+"% - "+(d.oneWayText)+" delay!";if(progress>=1){clearInterval(anim);let w=document.getElementById('delayWaitingMsg');if(w) w.innerText="✅ Message REACHED "+d.name+" after "+d.oneWayText+"! Luna/Stella is reading it... Now reply is coming back...";document.getElementById('delayStatusText').innerText="✅ Reached! Now reply is coming back - another "+d.oneWayText+"!";astroSay("Message reached! Now reply is coming back!","✅");speak("Message reached!");let start2=Date.now();let anim2=setInterval(()=>{let el2=Date.now()-start2;let pr2=Math.min(1,el2/d.delayMs);dot.classList.add('returning');dot.style.left=(60 + (1-pr2)*(trackW-140))+"px";document.getElementById('delayFill').style.width=(50+pr2*50)+"%";document.getElementById('delayCountdown').innerText="🔄 Reply coming back... "+Math.floor(pr2*100)+"% - Wait "+d.oneWayText+" more!";if(pr2>=1){clearInterval(anim2);dot.style.display='none';document.getElementById('delayFill').style.width="100%";let reply=d.replies[Math.floor(Math.random()*d.replies.length)];let them=document.createElement('div');them.className='chatMsg them';them.innerText=d.name.split(' - ')[1]+" ("+d.name.split(' ')[0]+"): "+reply+"  • Reply took "+d.roundTrip+" round-trip!";chat.appendChild(them);chat.scrollTop=chat.scrollHeight;if(w) w.remove();delayReplies++;document.getElementById('delayReplyCount').innerText=delayReplies;let stars="⭐".repeat(Math.min(5,delayReplies));document.getElementById('delayStars').innerText=stars;document.getElementById('delayCountdown').innerText="🎉 Reply received! Total wait: "+d.roundTrip+"! You waited patiently!";document.getElementById('delayStatusText').innerText="🎉 Reply received! Total round-trip: "+d.roundTrip;astroSay("Reply received! Total wait was "+d.roundTrip+"! You are patient!","😍");speak("Reply received! You waited patiently!");if(delayReplies>=3){allDance();}delayBusy=false;setTimeout(()=>{document.getElementById('delayFill').style.width="0%";document.getElementById('delayCountdown').innerText="Ready to send next message!";},2500);}},50);}},50);}
+function demoDelayCompare(){let box=document.getElementById('delayCompareBox');box.style.display='block';box.innerHTML="<b>⚡ DELAY COMPARISON - Same Message 'Hi!' Sent At Same Time:</b><br><br>🌍 <b>Earth Friend (Next Room):</b> 0.01 sec - Instant! ⚡<br>🌕 <b>Moon - Luna:</b> 1.3 sec one-way, 2.6 sec reply - Small wait! ⏳<br>☀️ <b>Sun:</b> 8 min one-way, 16 min reply - Long wait! 🕐<br>🔴 <b>Mars Near:</b> 3 min one-way, 6 min reply - Very long! ⏰<br>🔴 <b>Mars Far:</b> 22 min one-way, 44 min reply - SUPER long! 😮<br><br><b>Try it:</b> Send to Moon (fast), then send to Mars Far (slow). Feel the difference!";astroSay("Moon is 1.3 seconds! Mars far is 22 minutes! Huge difference!","📡");speak("Moon is 1.3 seconds! Mars far is 22 minutes!");}
+function clearDelayChat(){document.getElementById('delayChat').innerHTML="<div class='chatMsg waiting'>📡 Space Chat Cleared! Send a new message!</div>";delaySent=0;delayReplies=0;document.getElementById('delaySentCount').innerText="0";document.getElementById('delayReplyCount').innerText="0";document.getElementById('delayStars').innerText="⭐";}
+const planets=[{name:"Sun",color:0xffcc00,size:3,dist:0,desc:"Sun is a star! It gives light and heat.",img:"https://images.unsplash.com/photo-1531168556467-80aace0d0144?w=800&q=80",speed:0},{name:"Mercury",color:0x9c8e82,size:0.5,dist:5,desc:"Mercury is smallest & closest to Sun.",img:"https://images.unsplash.com/photo-1614730341194-75c607e1f8ff?w=800&q=80",speed:0.04},{name:"Venus",color:0xffb84d,size:0.9,dist:7,desc:"Venus is hottest planet - 465°C!",img:"https://images.unsplash.com/photo-1614313913007-2b4ae8ce32d6?w=800&q=80",speed:0.03},{name:"Earth",color:0x3b82f6,size:1,dist:9.5,desc:"Earth is our home! Only planet with water, oxygen & green trees.",img:"https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&q=80",speed:0.025},{name:"Mars",color:0xef4444,size:0.7,dist:12,desc:"Mars is Red Planet!",img:"https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?w=800&q=80",speed:0.02},{name:"Jupiter",color:0xf59e0b,size:2.2,dist:16,desc:"Jupiter is BIGGEST planet!",img:"https://images.unsplash.com/photo-1614732414444-096e5f1122d5?w=800&q=80",speed:0.015},{name:"Saturn",color:0xfde68a,size:1.9,dist:20,desc:"Saturn has beautiful rings!",img:"https://images.unsplash.com/photo-1614732484003-ef9881555dc6?w=800&q=80",speed:0.012},{name:"Uranus",color:0x67e8f9,size:1.3,dist:24,desc:"Uranus rolls on its side!",img:"https://images.unsplash.com/photo-1614732472925-26a0a4e84d3a?w=800&q=80",speed:0.009},{name:"Neptune",color:0x3b82f6,size:1.2,dist:27.5,desc:"Neptune is farthest & windiest!",img:"https://images.unsplash.com/photo-1614732479139-2d3a8b2a2b6c?w=800&q=80",speed:0.007}];
+let scene=new THREE.Scene();let camera=new THREE.PerspectiveCamera(60,1,0.1,1000);camera.position.set(0,14,28);let renderer=new THREE.WebGLRenderer({canvas:document.getElementById('solarCanvas'),antialias:true});
+function resize(){let w=document.getElementById('solarWrap').clientWidth,h=document.getElementById('solarWrap').clientHeight;renderer.setSize(w,h);camera.aspect=w/h;camera.updateProjectionMatrix();}
+window.addEventListener('resize',resize);resize();scene.add(new THREE.AmbientLight(0xffffff,0.6));scene.add(new THREE.PointLight(0xffffff,1.2,200));let meshes=[];
+planets.forEach((p)=>{let mesh=new THREE.Mesh(new THREE.SphereGeometry(p.size,32,32),new THREE.MeshStandardMaterial({color:p.color,emissive:p.name==="Sun"?0xffaa00:0x000000,emissiveIntensity:p.name==="Sun"?1:0}));mesh.userData=p;if(p.dist>0){let orbit=new THREE.Mesh(new THREE.RingGeometry(p.dist-0.05,p.dist+0.05,128),new THREE.MeshBasicMaterial({color:0x334155,side:THREE.DoubleSide,transparent:true,opacity:0.6}));orbit.rotation.x=-Math.PI/2;scene.add(orbit);}if(p.name==="Saturn"){let ring=new THREE.Mesh(new THREE.RingGeometry(p.size+0.4,p.size+1,64),new THREE.MeshBasicMaterial({color:0xfde68a,side:THREE.DoubleSide,transparent:true,opacity:0.8}));ring.rotation.x=-Math.PI/2.5;mesh.add(ring);}if(p.name==="Earth"){let moonTexture=new THREE.TextureLoader().load('https://threejs.org/examples/textures/planets/moon_1024.jpg');let moon=new THREE.Mesh(new THREE.SphereGeometry(0.25,16,16),new THREE.MeshStandardMaterial({map:moonTexture}));moon.position.x=1.6;mesh.add(moon);mesh.userData.moon=moon;}scene.add(mesh);meshes.push(mesh);});
+let btnDiv=document.getElementById('planetBtns');planets.forEach(p=>{let b=document.createElement('button');b.innerText=(p.name==="Sun"?"☀️ ":p.name==="Earth"?"🌍 ":p.name==="Mars"?"🔴 ":"🪐 ")+p.name;b.onclick=()=>showPlanet(p);btnDiv.appendChild(b);});
+function showPlanet(p){document.getElementById('planetInfo').style.display='block';document.getElementById('pName').innerText=(p.name==="Sun"?"☀️ ":"🪐 ")+p.name;document.getElementById('pDesc').innerText=p.desc;document.getElementById('pImg').src=p.img;astroSay(p.name+"! "+p.desc,"🤩");astroSpeak();}
+let ray=new THREE.Raycaster(),mouse=new THREE.Vector2();document.getElementById('solarCanvas').addEventListener('click',e=>{let r=e.target.getBoundingClientRect();mouse.x=((e.clientX-r.left)/r.width)*2-1;mouse.y=-((e.clientY-r.top)/r.height)*2+1;ray.setFromCamera(mouse,camera);let hits=ray.intersectObjects(meshes);if(hits.length) showPlanet(hits[0].object.userData);});
+let isDrag=false,px=0,py=0,rotX=0.3,rotY=0,camDist=30;let canvas=document.getElementById('solarCanvas');canvas.addEventListener('mousedown',e=>{isDrag=true;px=e.clientX;py=e.clientY;});window.addEventListener('mouseup',()=>isDrag=false);window.addEventListener('mousemove',e=>{if(!isDrag)return;rotY+=(e.clientX-px)*0.01;rotX+=(e.clientY-py)*0.01;rotX=Math.max(-1,Math.min(1,rotX));px=e.clientX;py=e.clientY;});canvas.addEventListener('wheel',e=>{e.preventDefault();camDist=Math.max(12,Math.min(55,camDist+e.deltaY*0.02));},{passive:false});
+let speedMult=1;function setSpeed(v,btn){speedMult=v;document.querySelectorAll('.controls button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}function resetCam(){rotX=0.3;rotY=0;camDist=30;}let angle=0;function animate(){requestAnimationFrame(animate);angle+=0.002*speedMult;meshes.forEach((m,i)=>{let p=planets[i];if(p.dist>0){let a=angle*(p.speed*80)+i;m.position.x=Math.cos(a)*p.dist;m.position.z=Math.sin(a)*p.dist;}m.rotation.y+=0.01*speedMult;if(p.name==="Earth"&&m.userData.moon){m.userData.moon.position.x=Math.cos(angle*8)*1.6;m.userData.moon.position.z=Math.sin(angle*8)*1.6;}});camera.position.x=Math.sin(rotY)*Math.cos(rotX)*camDist;camera.position.z=Math.cos(rotY)*Math.cos(rotX)*camDist;camera.position.y=Math.sin(rotX)*camDist+6;camera.lookAt(0,0,0);renderer.render(scene,camera);}animate();
+</script>
+</body>
+
+
+</section>
+
+ 
+<section id="missions" class="missions-section">
+
+    <h2>🚀 Space Mission Challenges</h2>
+
+    <p class="mission-intro">
+        Hello, Junior Astronaut! 👨‍🚀
+        Space travel is exciting, but astronauts face many challenges.
+        Let's discover how they overcome them!
+    </p>
+
+    <div class="mission-hero">
+        <div class="hero-astronaut">👨‍🚀</div>
+        <h2>Welcome to Space Academy!</h2>
+        <p>Learn how astronauts prepare, travel and live in space!</p>
+    </div>
+
+    <div class="challenge-container">
+
+        <article class="challenge-card">
+            <div class="cartoon-icon">🚀</div>
+           
+            <h3>1. Rocket Launch</h3>
+            <p>
+                A rocket carries astronauts and their spacecraft
+                away from Earth into space.
+            </p>
+            <details>
+                <summary>🌟 Discover the challenge</summary>
+                <p>
+                    A rocket must produce enough power to lift its
+                    heavy spacecraft. Engineers carefully check
+                    the rocket and its systems before launch.
+                </p>
+                <p><b>How is it managed?</b> Engineers test the rocket
+                and monitor the launch carefully.</p>
+            </details>
+        </article>
+
+        <article class="challenge-card">
+            <div class="cartoon-icon">🌌</div>
+            
+            <h3>2. Floating in Space</h3>
+            <p>
+                Astronauts appear to float because they experience
+                microgravity while orbiting Earth.
+            </p>
+            <details>
+                <summary>🌟 Discover the challenge</summary>
+                <p>
+                    Moving, sleeping and working can feel different
+                    when everything floats.
+                </p>
+                <p><b>How is it managed?</b> Astronauts use handrails,
+                special equipment and exercise routines.</p>
+            </details>
+        </article>
+
+        <article class="challenge-card">
+            <div class="cartoon-icon">🫁</div>
+            
+            <h3>3. Breathing in Space</h3>
+            <p>
+                Space does not have breathable air like Earth.
+                Astronauts need a supply of oxygen.
+            </p>
+            <details>
+                <summary>🌟 Discover the challenge</summary>
+                <p>
+                    Without a suitable air supply, astronauts
+                    cannot breathe normally.
+                </p>
+                <p><b>How is it managed?</b> Spacecraft have life-support
+                systems, and spacesuits supply breathable air.</p>
+            </details>
+        </article>
+
+        <article class="challenge-card">
+            <div class="cartoon-icon">🍎</div>
+            
+            <h3>4. Food and Water</h3>
+            <p>
+                Astronauts need food and clean water throughout
+                their space journey.
+            </p>
+            <details>
+                <summary>🌟 Discover the challenge</summary>
+                <p>
+                    Food and water must be stored carefully.
+                    Even small crumbs can float around!
+                </p>
+                <p><b>How is it managed?</b> Astronauts use specially
+                prepared meals and carefully managed water supplies.</p>
+            </details>
+        </article>
+
+        <article class="challenge-card">
+            <div class="cartoon-icon">📡</div>
+            
+            <h3>5. Communication</h3>
+            <p>
+                Astronauts need to exchange messages with
+                mission control on Earth.
+            </p>
+            <details>
+                <summary>🌟 Discover the challenge</summary>
+                <p>
+                    Communication becomes more difficult
+                    over very long distances.
+                </p>
+                <p><b>How is it managed?</b> Radio systems and
+                communication networks help send messages.</p>
+            </details>
+        </article>
+
+        <article class="challenge-card">
+            <div class="cartoon-icon">🧑‍🚀</div>
+            
+            <h3>6. Spacewalk</h3>
+            <p>
+                Sometimes astronauts leave their spacecraft
+                to repair equipment or perform experiments.
+            </p>
+            <details>
+                <summary>🌟 Discover the challenge</summary>
+                <p>
+                    Working outside a spacecraft is difficult
+                    because there is no breathable air.
+                </p>
+                <p><b>How is it managed?</b> Astronauts wear special
+                spacesuits that provide oxygen and maintain pressure.</p>
+            </details>
+        </article>
+
+        <article class="challenge-card">
+            <div class="cartoon-icon">🌍</div>
+            
+            <h3>7. Returning to Earth</h3>
+            <p>
+                After completing a mission, astronauts must
+                return safely to Earth.
+            </p>
+            <details>
+                <summary>🌟 Discover the challenge</summary>
+                <p>
+                    The spacecraft travels very fast and must
+                    slow down during its return.
+                </p>
+                <p><b>How is it managed?</b> Heat shields,
+                parachutes and carefully planned landing systems
+                help the spacecraft return safely.</p>
+            </details>
+        </article>
+
+    </div>
+
+    <div class="space-fact">
+        <h2>⭐ Space Fact!</h2>
+        <p>
+            The International Space Station is a science laboratory
+            that travels around Earth!
+        </p>
+        <div style="font-size:45px;">🛰️🌎👨‍🚀</div>
+    </div>
+
+    <p class="nasa-credit">
+        Real space photographs: NASA Image and Video Library.
+    </p>
+
+</section>
+   
+   <section id="final-test">
+
+    <h2>🏆 Final Mission: Space Genius Challenge</h2>
+
+    <p>Are you ready to prove your space knowledge?</p>
+
+    <div class="test-welcome">
+        <div style="font-size:65px;">👨‍🚀🚀</div>
+        <h3>Hello, Junior Astronaut!</h3>
+        <p>Answer 10 questions and become a Space Genius!</p>
+        <button onclick="startFinalTest()">
+            Start My Test 🚀
+        </button>
+    </div>
+
+    <div id="test-game" style="display:none;">
+
+        <h3 id="test-progress">Question 1 of 10</h3>
+
+        <div class="test-progress-bar">
+            <div id="test-progress-fill"></div>
+        </div>
+
+        <h3 id="test-question"></h3>
+
+        <div id="test-options"></div>
+
+        <p id="test-feedback"></p>
+
+        <button id="test-next"
+                onclick="nextTestQuestion()"
+                style="display:none;">
+            Next Question ➜
+        </button>
+
+    </div>
+
+    <div id="test-result" style="display:none;">
+
+        <div style="font-size:70px;">🏆🌟</div>
+
+        <h2>Mission Completed!</h2>
+
+        <h3 id="test-score"></h3>
+
+        <h3 id="test-badge"></h3>
+
+        <p id="test-message"></p>
+
+        <button onclick="startFinalTest()">
+            Try Again 🔄
+        </button>
+
+    </div>
+
+</section>
+
+<section id="training">
+
+    <h2>🚀 Astronaut Training Centre</h2>
+    <p>Prepare yourself to become a Junior Astronaut!</p>
+
+    <div class="planet-container">
+
+        <div class="planet-card" onclick="showTraining('environment')">
+            <h3>🌌 Space Environment</h3>
+            <p>Learn about microgravity and the space environment.</p>
+            <button>Explore</button>
+        </div>
+
+        <div class="planet-card" onclick="showTraining('equipment')">
+            <h3>👩‍🚀 Astronaut Equipment</h3>
+            <p>Discover spacesuits and equipment used by astronauts.</p>
+            <button>Explore</button>
+        </div>
+
+        <div class="planet-card" onclick="showTraining('station')">
+            <h3>🛰️ Space Station</h3>
+            <p>Explore how astronauts live and work in space.</p>
+            <button>Explore</button>
+        </div>
+
+        <div class="planet-card" onclick="showTraining('moon')">
+            <h3>🌙 Moon Exploration</h3>
+            <p>Learn about lunar exploration and Moon missions.</p>
+            <button>Explore</button>
+        </div>
+
+        <div class="planet-card" onclick="showTraining('mission')">
+            <h3>👩‍🚀 Mission Preparation</h3>
+            <p>Understand how astronauts prepare for missions.</p>
+            <button>Explore</button>
+        </div>
+
+        <div class="planet-card" onclick="showTraining('science')">
+            <h3>⭐ Space Science</h3>
+            <p>Discover interesting facts about the universe.</p>
+            <button>Explore</button>
+        </div>
+
+    </div>
+
+    <!-- Information will appear here -->
+
+    <div id="training-info" class="training-info">
+        <h2>Welcome to Astronaut Training!</h2>
+        <p>Click any topic above to learn more.</p>
+    </div>
+
+</section>
+
+<footer>
+        <p>Junior Astronaut | Explore Beyond Earth 🚀</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
